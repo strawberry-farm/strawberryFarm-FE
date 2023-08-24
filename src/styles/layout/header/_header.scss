@@ -1,0 +1,108 @@
+@mixin searchTagStyles($width) {
+    display: flex;
+    padding: 0 10px 0 15px;
+    // width: $width;
+    color: #6e6e6e;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
+@mixin SearchTagSpan {
+    width: 16px;
+    height: 16px;
+    color: rgba(0, 0, 0, 0.2);
+    margin-left: 23px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
+@mixin userToolIcon($width, $height, $top) {
+    position: relative;
+    top: $top;
+    width: $width;
+    height: $height;
+}
+
+.headers {
+    width: 1440px;
+    height: 160px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .headLayout {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        .headersLogo {
+            width: 20%;
+            img {
+                width: 46px;
+                height: 46px;
+                flex-shrink: 0;
+            }
+            span {
+                position: relative;
+                top: -10px;
+                margin-left: 5px;
+                color: #1d5d9b;
+                font-family: Inter;
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+        .searchLayout {
+            width: 60%;
+            flex-shrink: 0;
+            .search {
+                width: 515px;
+                height: 48px;
+                width: 80%;
+                margin: 0 auto;
+                border-radius: 36px;
+                background: #fff;
+                box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
+                display: flex;
+                .region {
+                    @include searchTagStyles(20%);
+                    cursor: pointer;
+                    padding: 0 10px 0 30px;
+                    span {
+                        @include SearchTagSpan;
+                    }
+                }
+                .dayAndTime {
+                    cursor: pointer;
+                    @include searchTagStyles(35%);
+                    padding: 0 10px 0 0px;
+                    span {
+                        @include SearchTagSpan;
+                    }
+                }
+                .localAndTitle {
+                    @include searchTagStyles(50%);
+                }
+            }
+        }
+        .userTool {
+            width: 20%;
+            text-align: right;
+            .memu {
+                @include userToolIcon(28px, 28px, 10px);
+            }
+            .alarm {
+                @include userToolIcon(25.18px, 28.808px, 10px);
+                padding: 0 20px;
+            }
+            .userIcon {
+                @include userToolIcon(36px, 36px, 13px);
+            }
+        }
+    }
+}
