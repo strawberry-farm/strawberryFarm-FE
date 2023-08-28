@@ -1,0 +1,44 @@
+.layout {
+    position: absolute;
+    left: 440px;
+    top: 120px;
+    width: 560px;
+    height: 250px;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px;
+    background-color: #ffffff;
+    display: flex;
+    overflow: hidden;
+    .city {
+        border-right: 1px #dcdcdc solid;
+        width: 30%;
+        overflow: auto;
+
+        .cityLow {
+            padding: 23.3px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #ececec;
+            }
+        }
+    }
+    .local {
+        width: 70%;
+        display: flex;
+        justify-items: flex-start;
+        .localLayout {
+            padding: 23.3px;
+            border-bottom: 1px #dcdcdc solid;
+            height: 14px;
+            width: 50%;
+            &:nth-child(odd) {
+                border-right: 1px #dcdcdc solid;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: #ececec;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import SearchTag from '../@common/SearchTag/searchTag';
 import { useNavigate } from 'react-router-dom';
 import useFocus from '../../hooks/useFocus';
 import { UserDropDown } from '../@common/DropDown/dropdown';
+import Region from '../@common/Region/region';
 const demmy = [
     {
         sidoName: '서울',
@@ -21,6 +22,58 @@ const demmy = [
     },
     {
         sidoName: '경기',
+        sigungu: [
+            {
+                sigunguName: '경기 전체',
+                bCode: 4100000000,
+            },
+            {
+                sigunguName: '성남시',
+                bCode: '4130000000',
+            },
+        ],
+    },
+    {
+        sidoName: '인천',
+        sigungu: [
+            {
+                sigunguName: '경기 전체',
+                bCode: 4100000000,
+            },
+            {
+                sigunguName: '성남시',
+                bCode: '4130000000',
+            },
+        ],
+    },
+    {
+        sidoName: '대전',
+        sigungu: [
+            {
+                sigunguName: '경기 전체',
+                bCode: 4100000000,
+            },
+            {
+                sigunguName: '성남시',
+                bCode: '4130000000',
+            },
+        ],
+    },
+    {
+        sidoName: '충남',
+        sigungu: [
+            {
+                sigunguName: '경기 전체',
+                bCode: 4100000000,
+            },
+            {
+                sigunguName: '성남시',
+                bCode: '4130000000',
+            },
+        ],
+    },
+    {
+        sidoName: '세종',
         sigungu: [
             {
                 sigunguName: '경기 전체',
@@ -82,7 +135,6 @@ const Header = () => {
             }
         }
         if (name.className.includes('dayAndTime')) {
-            console.log('o2');
             if (isSearch.dayAndTime === 'basic') {
                 setIsSearch({
                     ...isSearch,
@@ -94,90 +146,106 @@ const Header = () => {
             }
         }
     };
-    console.log(isMemu, '메뉴');
 
     const jwt = true; // 임시
     return (
-        <header className="headers">
-            <div className="headLayout">
-                <div className="headersLogo" onClick={() => navigate('/')}>
-                    <img src="./icons/personRunning.png" alt="logo" />
-                    <span>둘이서</span>
-                </div>
-                <div className="searchLayout">
-                    <div
-                        className="search"
-                        onClick={searchOnclickHandler}
-                        ref={searchRef}
-                    >
-                        <SearchTag
-                            className={'region'}
-                            onClickProps={isSearch.region}
+        <>
+            <header className="headers">
+                <div className="headLayout">
+                    <div className="headersLogo" onClick={() => navigate('/')}>
+                        <img src="./icons/personRunning.png" alt="logo" />
+                        <span>둘이서</span>
+                    </div>
+                    <div className="searchLayout">
+                        <div
+                            className="search"
+                            onClick={searchOnclickHandler}
+                            ref={searchRef}
                         >
-                            지역{' '}
-                        </SearchTag>
-                        {isSearch.region.includes('basic') &&
-                            isSearch.dayAndTime.includes('basic') && (
+                            <SearchTag
+                                className={'region'}
+                                onClickProps={isSearch.region}
+                            >
+                                지역{' '}
+                            </SearchTag>
+                            {isSearch.region.includes('basic') &&
+                                isSearch.dayAndTime.includes('basic') && (
+                                    <span className="stick">|</span>
+                                )}
+                            {/* <div className="region"></div> */}
+                            <SearchTag
+                                className={'dayAndTime'}
+                                onClickProps={isSearch.dayAndTime}
+                            >
+                                요일·시간대{' '}
+                            </SearchTag>
+                            {isSearch.dayAndTime.includes('basic') && (
                                 <span className="stick">|</span>
                             )}
-                        {/* <div className="region"></div> */}
-                        <SearchTag
-                            className={'dayAndTime'}
-                            onClickProps={isSearch.dayAndTime}
-                        >
-                            요일·시간대{' '}
-                        </SearchTag>
-                        {isSearch.dayAndTime.includes('basic') && (
-                            <span className="stick">|</span>
-                        )}
-                        <input
-                            className="searchInp"
-                            placeholder="모임을 검색해 보세요!"
-                            ref={ref}
-                        />
-                        <div className="searchIconBtn">
-                            <img src="./icons/searchIcon.png" alt="검색버튼" />
+                            <input
+                                className="searchInp"
+                                placeholder="모임을 검색해 보세요!"
+                                ref={ref}
+                            />
+                            <div className="searchIconBtn">
+                                <img
+                                    src="./icons/searchIcon.png"
+                                    alt="검색버튼"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="userTool">
-                    {!jwt && (
-                        <img
-                            onClick={() =>
-                                setIsMemu({ ...isMemu, guest: !isMemu.guest })
-                            }
-                            className="memu"
-                            src="./icons/memu.png"
-                            alt="사용자메뉴"
-                        />
-                    )}
-                    {jwt && (
-                        <>
+
+                    <div className="userTool">
+                        {!jwt && (
                             <img
                                 onClick={() =>
                                     setIsMemu({
-                                        ...isMemu,
-                                        alarm: !isMemu.alarm,
+                                        guest: !isMemu.guest,
+                                        user: false,
+                                        alarm: false,
                                     })
                                 }
-                                className="alarm"
-                                src="./icons/alarm.png"
-                                alt="알림"
+                                className="memu"
+                                src="./icons/memu.png"
+                                alt="사용자메뉴"
                             />
-                            <img
-                                onClick={() =>
-                                    setIsMemu({ ...isMemu, user: !isMemu.user })
-                                }
-                                className="userIcon"
-                                src="./icons/userIcon.png"
-                                alt="유저메뉴"
-                            />
-                        </>
-                    )}
-                    {isMemu && <UserDropDown jwt={jwt} situation={isMemu} />}
+                        )}
+                        {jwt && (
+                            <>
+                                <img
+                                    onClick={() =>
+                                        setIsMemu({
+                                            guest: false,
+                                            user: false,
+                                            alarm: !isMemu.alarm,
+                                        })
+                                    }
+                                    className="alarm"
+                                    src="./icons/alarm.png"
+                                    alt="알림"
+                                />
+                                <img
+                                    onClick={() =>
+                                        setIsMemu({
+                                            ...isMemu,
+                                            user: !isMemu.user,
+                                        })
+                                    }
+                                    className="userIcon"
+                                    src="./icons/userIcon.png"
+                                    alt="유저메뉴"
+                                />
+                            </>
+                        )}
+                        {isMemu && (
+                            <UserDropDown jwt={jwt} situation={isMemu} />
+                        )}
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+            {isSearch.region === 'actives' && <Region data={demmy} />}
+        </>
     );
 };
 
