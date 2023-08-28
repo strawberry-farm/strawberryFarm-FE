@@ -1,5 +1,10 @@
 export interface SearchIsProps {
-    region: boolean;
-    dayAndTime: boolean;
-    localAndTitle: boolean;
+    region: string;
+    dayAndTime: string;
+    localAndTitle: string;
+}
+export interface Situation {
+    user: boolean;
+    alarm: boolean;
+    guest: boolean;
 }
