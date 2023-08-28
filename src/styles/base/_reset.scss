@@ -84,6 +84,7 @@ video {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -130,4 +131,5 @@ input {
     background-color: inherit;
     outline: 0;
     border: 0;
+    box-sizing: border-box;
 }
