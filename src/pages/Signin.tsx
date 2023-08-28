@@ -4,7 +4,9 @@ import SigninForm from '../components/signin/SigninForm';
 export default function Signin() {
     return (
         <Wrapper>
-            <SigninForm />
+            <div className="signin-wrapper">
+                <SigninForm />
+            </div>
         </Wrapper>
     );
 }
