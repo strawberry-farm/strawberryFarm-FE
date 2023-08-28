@@ -1,0 +1,19 @@
+.common-button {
+    background-color: $color-blue;
+    box-shadow: 0 0 4px 0 rgba(#000000, 10%);
+    color: white;
+}
+
+.signin-form {
+    .common-button {
+        padding: 18px 56px;
+        font-size: 22px;
+        border-radius: 12px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(1.03);
+        }
+    }
+}
