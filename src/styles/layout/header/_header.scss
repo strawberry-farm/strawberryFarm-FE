@@ -1,18 +1,20 @@
 @mixin searchTagStyles($width) {
     display: flex;
-    padding: 0 10px 0 15px;
     // width: $width;
     color: #6e6e6e;
+    height: 45px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 50px;
+    display: flex;
+    justify-content: center;
 }
 @mixin SearchTagSpan {
     width: 16px;
     height: 16px;
     color: rgba(0, 0, 0, 0.2);
-    margin-left: 23px;
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -23,6 +25,7 @@
     top: $top;
     width: $width;
     height: $height;
+    cursor: pointer;
 }
 
 .headers {
@@ -39,6 +42,7 @@
         margin: auto;
         display: flex;
         .headersLogo {
+            cursor: pointer;
             width: 20%;
             img {
                 width: 46px;
@@ -62,37 +66,77 @@
             flex-shrink: 0;
             .search {
                 width: 515px;
-                height: 48px;
+                height: 55px;
                 width: 80%;
                 margin: 0 auto;
                 border-radius: 36px;
                 background: #fff;
+                padding: 5px 5px 0px 5px;
                 box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
                 display: flex;
+                .stick {
+                    @include SearchTagSpan;
+                }
                 .region {
-                    @include searchTagStyles(20%);
+                    @include searchTagStyles(15%);
                     cursor: pointer;
-                    padding: 0 10px 0 30px;
-                    span {
-                        @include SearchTagSpan;
+                    // width: 15%;
+                    text-align: center;
+                    flex: 1;
+                    // padding: 0 10px 0 30px;
+                    &.actives {
+                        display: flex;
+                        justify-content: center;
+                        // padding: 0 10px;
+                        flex: 1;
+                        // margin-right: 10px;
+                        border-radius: 36px;
+                        background: #fff;
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
                     }
                 }
                 .dayAndTime {
+                    flex: 1;
                     cursor: pointer;
-                    @include searchTagStyles(35%);
-                    padding: 0 10px 0 0px;
-                    span {
-                        @include SearchTagSpan;
+                    @include searchTagStyles(25%);
+                    // padding: 0 10px 0 0px;
+                    // width: 23%;
+                    &.actives {
+                        display: flex;
+                        justify-content: center;
+                        // padding: 0 10px;
+                        flex: 1;
+                        margin-right: 10px;
+                        border-radius: 36px;
+                        background: #fff;
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
                     }
                 }
-                .localAndTitle {
-                    @include searchTagStyles(50%);
+                .searchInp {
+                    flex: 2;
+                    width: 50%;
+                    color: #6e6e6e;
+                    height: 45px;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    padding-top: 3px;
+                }
+                .searchIconBtn {
+                    padding: 8px 12px;
+                    cursor: pointer;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
                 }
             }
         }
         .userTool {
             width: 20%;
             text-align: right;
+
             .memu {
                 @include userToolIcon(28px, 28px, 10px);
             }
