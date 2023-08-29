@@ -1,13 +1,13 @@
 import { useEffect, useState, useRef } from 'react';
-import { SignupCodeConfirmProps } from './Signup.interface';
+import { CodeConfirmProps } from './CodeConfirm.interface';
 
-export default function SignupCodeConfirm({
+export default function CodeConfirm({
     success,
     active,
     setActive,
     timer,
     setTimer,
-}: SignupCodeConfirmProps) {
+}: CodeConfirmProps) {
     const [message, setMessage] = useState<string>('');
     const [minute, setMinute] = useState<number>(2);
     const [second, setSecond] = useState<number>(59);
@@ -42,9 +42,5 @@ export default function SignupCodeConfirm({
         success === 'fail' && setMessage('잘못된 인증번호입니다.');
     }, [success, active, minute, second]);
 
-    return (
-        <div className={`signup-form-code-confirm-message ${success}`}>
-            {message}
-        </div>
-    );
+    return <div className={`code-confirm-message ${success}`}>{message}</div>;
 }

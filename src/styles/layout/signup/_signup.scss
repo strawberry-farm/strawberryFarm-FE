@@ -40,7 +40,8 @@
                 width: 480px;
                 height: 68px;
 
-                .email-certificate-button {
+                .email-certificate-button,
+                .code-certificate-button {
                     @include button-blue;
                     width: 132px;
                     font-size: 18px;
@@ -53,22 +54,6 @@
                 flex-direction: column;
                 gap: 16px;
                 width: inherit;
-
-                .signup-form-code-confirm-message {
-                    display: block;
-                    width: inherit;
-                    height: 15px;
-                    font-size: 15px;
-                    color: $color-black;
-
-                    &.success {
-                        color: $color-blue-dark;
-                    }
-
-                    &.fail {
-                        color: rgb(255, 73, 73);
-                    }
-                }
             }
         }
 

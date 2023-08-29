@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import { modalState } from '../../atom/modalState';
 import Portal from '../@common/modal/portal/Portal';
 import ConfirmModal from '../@common/modal/ConfirmModal';
-import SignupCodeConfirm from './SignupCodeConfirm';
+import CodeConfirm from '../@common/codeConfirm/CodeConfirm';
 
 export default function SignupForm() {
     const [modal, setModal] = useRecoilState(modalState);
@@ -34,6 +34,7 @@ export default function SignupForm() {
             content: '인증번호가 전송되었습니다',
             confirm: '확인',
             modalOpen: true,
+            url: '',
         });
         setAuthenticating(true);
         setDisabled(true);
@@ -105,7 +106,7 @@ export default function SignupForm() {
                                 />
                                 <button
                                     type="button"
-                                    className="email-certificate-button"
+                                    className="code-certificate-button"
                                     onClick={
                                         active
                                             ? checkAuthenticationCode
@@ -116,7 +117,7 @@ export default function SignupForm() {
                                 </button>
                             </div>
                         )}
-                        <SignupCodeConfirm
+                        <CodeConfirm
                             success={success}
                             active={active}
                             setActive={setActive}
