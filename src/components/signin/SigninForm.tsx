@@ -69,7 +69,7 @@ export default function SigninForm() {
                 <p
                     className="signin-form-sub-content"
                     onClick={() => {
-                        goToPage('/password/reset');
+                        goToPage('/password-reset');
                     }}
                 >
                     비밀번호 재설정

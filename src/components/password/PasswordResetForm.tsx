@@ -1,23 +1,21 @@
 import { useState } from 'react';
 import Input from '../@common/input/Input';
-import SignUpRegex from './SignupRegex';
+import PasswordResetRegex from './PasswordResetRegex';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../../atom/modalState';
 import Portal from '../@common/modal/portal/Portal';
 import ConfirmModal from '../@common/modal/ConfirmModal';
 import CodeConfirm from '../@common/codeConfirm/CodeConfirm';
 
-export default function SignupForm() {
+export default function PasswordResetForm() {
     const [modal, setModal] = useRecoilState(modalState);
     const [email, setEmail] = useState<string | undefined>();
     const [password, setPassword] = useState<string | undefined>();
     const [passwordConfirm, setPasswordConfirm] = useState<
         string | undefined
     >();
-    const [nickName, setNickname] = useState<string | undefined>();
     const [code, setCode] = useState<string | undefined>();
     const [empty, setEmpty] = useState<boolean>(false);
-    const [register, setRegister] = useState<boolean>(false);
     const [authenticating, setAuthenticating] = useState<boolean>(false);
     const [disabled, setDisabled] = useState<boolean>(false);
     const [success, setSuccess] = useState<string>('progressing');
@@ -56,28 +54,25 @@ export default function SignupForm() {
         setTimer(179);
     };
 
-    const completeSignup = () => {
+    const completePasswordReset = () => {
         setModal({
-            content: '회원가입이 완료되었습니다',
-            confirm: '로그인하러 가기',
+            content: '비밀번호 수정이 완료되었습니다.',
+            confirm: '확인',
             modalOpen: true,
             url: '/signin',
         });
     };
-
     return (
-        <div className="signup-form">
-            <div className="signup-form-title">회원가입</div>
-            <div className="signup-form-input-area">
-                <SignUpRegex
+        <div className="password-reset-form">
+            <div className="password-reset-form-title">비밀번호 재설정</div>
+            <div className="password-reset-form-input-area">
+                <PasswordResetRegex
                     email={email}
                     password={password}
                     passwordConfirm={passwordConfirm}
-                    nickName={nickName}
                     empty={empty}
-                    register={register}
                 />
-                <div className="signup-form-email-group">
+                <div className="password-reset-form-email-group">
                     <Input
                         placeholder="이메일을 입력하세요"
                         type="text"
@@ -95,9 +90,9 @@ export default function SignupForm() {
                     )}
                 </div>
                 {authenticating && (
-                    <div className="signup-form-code-confirm-group">
+                    <div className="password-reset-form-code-confirm-group">
                         {success !== 'success' && (
-                            <div className="signup-form-code-confirm">
+                            <div className="password-reset-form-code-confirm">
                                 <Input
                                     placeholder="인증코드를 입력하세요."
                                     type="text"
@@ -127,35 +122,25 @@ export default function SignupForm() {
                     </div>
                 )}
                 <Input
-                    placeholder="비밀번호를 입력하세요"
+                    placeholder="새로운 비밀번호를 입력하세요"
                     type="password"
                     setValue={setPassword}
                     disabled={false}
                 />
                 <Input
-                    placeholder="비밀번호를 한번 더 입력하세요"
+                    placeholder="새로운 비밀번호를 한번 더 입력하세요"
                     type="password"
                     setValue={setPasswordConfirm}
-                    disabled={false}
-                />
-                <Input
-                    placeholder="닉네임을 설정하세요"
-                    type="text"
-                    setValue={setNickname}
                     disabled={false}
                 />
             </div>
             <button
                 type="button"
-                className="signup-form-button"
-                disabled={
-                    email && password && passwordConfirm && nickName
-                        ? false
-                        : true
-                }
-                onClick={completeSignup}
+                className="password-reset-form-button"
+                disabled={email && password && passwordConfirm ? false : true}
+                onClick={completePasswordReset}
             >
-                가입 완료
+                비밀번호 수정 완료
             </button>
             {modal.modalOpen && (
                 <Portal>

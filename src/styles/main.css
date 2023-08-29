@@ -261,6 +261,20 @@ input {
   transform: scale(1.03);
 }
 
+.code-confirm-message {
+  display: block;
+  width: inherit;
+  height: 15px;
+  font-size: 15px;
+  color: #000000;
+}
+.code-confirm-message.success {
+  color: #1d5d9b;
+}
+.code-confirm-message.fail {
+  color: rgb(255, 73, 73);
+}
+
 .signin-wrapper {
   display: flex;
   align-items: center;
@@ -370,7 +384,9 @@ input {
   height: 68px;
 }
 .signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button {
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .code-certificate-button,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .code-certificate-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -388,7 +404,9 @@ input {
   white-space: nowrap;
 }
 .signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button:active,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button:active {
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .code-certificate-button:active,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button:active,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .code-certificate-button:active {
   transform: scale(1.03);
 }
 .signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group {
@@ -396,19 +414,6 @@ input {
   flex-direction: column;
   gap: 16px;
   width: inherit;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message {
-  display: block;
-  width: inherit;
-  height: 15px;
-  font-size: 15px;
-  color: #000000;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message.success {
-  color: #1d5d9b;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message.fail {
-  color: rgb(255, 73, 73);
 }
 .signup-wrapper .signup-form .signup-form-button {
   display: flex;
@@ -429,6 +434,101 @@ input {
   transform: scale(1.03);
 }
 .signup-wrapper .signup-form .signup-form-button:disabled {
+  background-color: #dbdbdb;
+  color: #000000;
+}
+
+.password-reset-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.password-reset-wrapper .password-reset-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  margin: 100px 0;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-title {
+  font-size: 40px;
+  font-weight: 500;
+  color: #000000;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 54px 0 40px 0;
+  width: inherit;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-regex {
+  display: block;
+  width: inherit;
+  height: 15px;
+  font-size: 15px;
+  color: rgb(255, 73, 73);
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm {
+  display: flex;
+  gap: 16px;
+  width: 480px;
+  height: 68px;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .email-certificate-button,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .code-certificate-button,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .email-certificate-button,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .code-certificate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
+  background-color: rgba(29, 93, 155, 0.8);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  width: 132px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .email-certificate-button:active,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .code-certificate-button:active,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .email-certificate-button:active,
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .code-certificate-button:active {
+  transform: scale(1.03);
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: inherit;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
+  background-color: rgba(29, 93, 155, 0.8);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 68px;
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-button:active {
+  transform: scale(1.03);
+}
+.password-reset-wrapper .password-reset-form .password-reset-form-button:disabled {
   background-color: #dbdbdb;
   color: #000000;
 }/*# sourceMappingURL=main.css.map */

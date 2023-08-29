@@ -10,7 +10,7 @@ export default function ConfirmModal() {
 
     const closeModal = () => {
         setModal({ ...modal, modalOpen: false });
-        modal.confirm === '로그인하러 가기' && navigate(`${modal.url}`);
+        modal.url === '/signin' && navigate(`${modal.url}`);
     };
 
     const modalOutSideClick = (e: any) => {
