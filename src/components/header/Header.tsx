@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
-import '../../styles/layout/header/_header.scss';
-import { SearchIsProps, Situation } from './Header.interface';
-import SearchTag from '../@common/SearchTag/searchTag';
+import {
+    LocalTimeProps,
+    RegionProps,
+    SearchIsProps,
+    Situation,
+} from './Header.interface';
+import { SearchTag } from './HeaderSearchTag';
 import { useNavigate } from 'react-router-dom';
-import useFocus from '../../hooks/useFocus';
-import { UserDropDown } from '../@common/DropDown/dropdown';
-import Region from '../@common/Region/region';
-const demmy = [
+import { useFocus } from '../../hooks/useFocus';
+import { UserDropDown } from './HeaderDropdown';
+import { Region } from './HeaderRegion';
+import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
+const demmy: RegionProps[] = [
     {
         sidoName: '서울',
         sigungu: [
@@ -29,7 +34,7 @@ const demmy = [
             },
             {
                 sigunguName: '성남시',
-                bCode: '4130000000',
+                bCode: 4130000000,
             },
         ],
     },
@@ -42,7 +47,7 @@ const demmy = [
             },
             {
                 sigunguName: '성남시',
-                bCode: '4130000000',
+                bCode: 4130000000,
             },
         ],
     },
@@ -55,7 +60,7 @@ const demmy = [
             },
             {
                 sigunguName: '성남시',
-                bCode: '4130000000',
+                bCode: 4130000000,
             },
         ],
     },
@@ -68,7 +73,7 @@ const demmy = [
             },
             {
                 sigunguName: '성남시',
-                bCode: '4130000000',
+                bCode: 4130000000,
             },
         ],
     },
@@ -81,20 +86,24 @@ const demmy = [
             },
             {
                 sigunguName: '성남시',
-                bCode: '4130000000',
+                bCode: 4130000000,
             },
         ],
     },
 ];
 
-const Header = () => {
-    const navigate = useNavigate();
+export const Header = () => {
     const searchRef = useRef<HTMLDivElement>(null);
+    const navigator = useNavigate();
     const { ref, isFocused } = useFocus(false);
     const [isMemu, setIsMemu] = useState<Situation>({
         user: false,
         alarm: false,
         guest: false,
+    });
+    const [dayTitle, setDayTitle] = useState<LocalTimeProps>({
+        day: '',
+        time: '',
     });
     // const [isRegion, setIsRegion] = useState(false);
     const [isSearch, setIsSearch] = useState<SearchIsProps>({
@@ -152,7 +161,7 @@ const Header = () => {
         <>
             <header className="headers">
                 <div className="headLayout">
-                    <div className="headersLogo" onClick={() => navigate('/')}>
+                    <div className="headersLogo" onClick={() => navigator('/')}>
                         <img src="./icons/personRunning.png" alt="logo" />
                         <span>둘이서</span>
                     </div>
@@ -195,7 +204,6 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className="userTool">
                         {!jwt && (
                             <img
@@ -245,8 +253,7 @@ const Header = () => {
                 </div>
             </header>
             {isSearch.region === 'actives' && <Region data={demmy} />}
+            {isSearch.dayAndTime === 'actives' && <HeaderLocalAndTitle />}
         </>
     );
 };
-
-export default Header;

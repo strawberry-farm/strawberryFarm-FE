@@ -8,3 +8,14 @@ export interface Situation {
     alarm: boolean;
     guest: boolean;
 }
+export interface RegionProps {
+    sidoName: string;
+    sigungu: {
+        sigunguName: string;
+        bCode: number;
+    }[];
+}
+export interface LocalTimeProps {
+    day: string;
+    time: string;
+}

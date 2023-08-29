@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import '../../../styles/layout/region/_region.scss';
-import { RegionProps } from './region.interface';
-const Region = (props: { data: RegionProps[] }) => {
+import { RegionProps } from './Header.interface';
+export const Region = (props: { data: RegionProps[] }) => {
     const data = props.data;
-    console.log(data);
     // const [defaultData, setDefaultData] = useState('서울');
     const [local, setLocal] = useState(data[0].sigungu);
     const OnclickHandler = (e: React.MouseEvent) => {
@@ -35,7 +33,7 @@ const Region = (props: { data: RegionProps[] }) => {
                         }) => {
                             return (
                                 <div key={item.bCode} className="localLayout">
-                                    {item.sigunguName}
+                                    <span> {item.sigunguName}</span>
                                 </div>
                             );
                         },
@@ -44,5 +42,3 @@ const Region = (props: { data: RegionProps[] }) => {
         </div>
     );
 };
-
-export default Region;
