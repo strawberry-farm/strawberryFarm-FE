@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import '../../../styles/layout/header/_header.scss';
 const SearchTag = (props: {
     onClickProps: string;
@@ -8,8 +8,8 @@ const SearchTag = (props: {
 }) => {
     return (
         <div
-            className={classNames(props.className, props.onClickProps)}
-            // onClick={onClickHandler}
+        // className={classNames(props.className, props.onClickProps)}
+        // onClick={onClickHandler}
         >
             {props.children}
         </div>
