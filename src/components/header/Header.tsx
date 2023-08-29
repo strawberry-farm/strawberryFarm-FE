@@ -188,10 +188,7 @@ const Header = () => {
                                 ref={ref}
                             />
                             <div className="searchIconBtn">
-                                <img
-                                    src="./icons/searchIcon.png"
-                                    alt="검색버튼"
-                                />
+                                <img src="./icons/search.png" alt="검색버튼" />
                             </div>
                         </div>
                     </div>

@@ -1,22 +1,33 @@
 .common-input-wrapper {
     width: 100%;
+    height: 68px;
     border: 1px solid $color-blue;
     border-radius: 16px;
     transition: 0.3s;
+    overflow: hidden;
 
     &:has(.common-input:focus) {
         box-shadow: 0 0 5px 0 rgba(#000000, 25%);
     }
 
     .common-input {
-        padding: 28px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 32px;
         width: inherit;
+        height: inherit;
         font-size: 16px;
         color: $color-gray-900;
         box-sizing: border-box;
+        overflow: hidden;
 
         &::placeholder {
             color: $color-gray-600;
+        }
+
+        &:disabled {
+            background-color: $color-gray-100;
         }
     }
 }
