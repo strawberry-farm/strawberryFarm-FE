@@ -145,22 +145,32 @@ input {
 
 .common-input-wrapper {
   width: 100%;
+  height: 68px;
   border: 1px solid rgba(29, 93, 155, 0.8);
   border-radius: 16px;
   transition: 0.3s;
+  overflow: hidden;
 }
 .common-input-wrapper:has(.common-input:focus) {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
 }
 .common-input-wrapper .common-input {
-  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 32px;
   width: inherit;
+  height: inherit;
   font-size: 16px;
   color: #292929;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .common-input-wrapper .common-input::placeholder {
   color: #6e6e6e;
+}
+.common-input-wrapper .common-input:disabled {
+  background-color: #f2f2f2;
 }
 
 .common-wrapper {
@@ -172,19 +182,82 @@ input {
 }
 
 .common-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
   background-color: rgba(29, 93, 155, 0.8);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
   color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.common-button:active {
+  transform: scale(1.03);
 }
 
 .signin-form .common-button {
   padding: 18px 56px;
   font-size: 22px;
   border-radius: 12px;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+.modal-background .modal-container {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 20px;
+}
+.modal-background .modal-container .modal-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 110px;
+  width: 100%;
+  height: 100%;
+}
+.modal-background .modal-container .modal-wrapper .modal-contents {
+  margin-top: 100px;
+  width: inherit;
+  text-align: center;
+  font-size: 20px;
+}
+.modal-background .modal-container .modal-wrapper .modal-confirm-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
+  background-color: rgba(29, 93, 155, 0.8);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
   transition: 0.3s;
   cursor: pointer;
+  padding: 12px 28px;
+  width: 50%;
+  height: 48px;
+  border-radius: 12px;
 }
-.signin-form .common-button:active {
+.modal-background .modal-container .modal-wrapper .modal-confirm-button:active {
   transform: scale(1.03);
 }
 
@@ -199,7 +272,7 @@ input {
   justify-content: center;
   align-items: center;
   width: 480px;
-  margin-top: 100px;
+  margin: 100px 0;
 }
 .signin-wrapper .signin-form .signin-form-title {
   font-size: 40px;
@@ -224,6 +297,7 @@ input {
 .signin-wrapper .signin-form .signin-form-button-area {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   width: inherit;
 }
 .signin-wrapper .signin-form .signin-form-button-area .signin-form-kakao-button {
@@ -253,4 +327,108 @@ input {
 .signin-wrapper .signin-form .signin-form-sub-area .signin-form-sub-content span {
   font-weight: 600;
   color: rgba(29, 93, 155, 0.8);
+}
+
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-wrapper .signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  margin: 100px 0;
+}
+.signup-wrapper .signup-form .signup-form-title {
+  font-size: 40px;
+  font-weight: 500;
+  color: #000000;
+}
+.signup-wrapper .signup-form .signup-form-input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 54px 0 40px 0;
+  width: inherit;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-regex {
+  display: block;
+  width: inherit;
+  height: 15px;
+  font-size: 15px;
+  color: rgb(255, 73, 73);
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm {
+  display: flex;
+  gap: 16px;
+  width: 480px;
+  height: 68px;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
+  background-color: rgba(29, 93, 155, 0.8);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  width: 132px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button:active,
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button:active {
+  transform: scale(1.03);
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: inherit;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message {
+  display: block;
+  width: inherit;
+  height: 15px;
+  font-size: 15px;
+  color: #000000;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message.success {
+  color: #1d5d9b;
+}
+.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group .signup-form-code-confirm-message.fail {
+  color: rgb(255, 73, 73);
+}
+.signup-wrapper .signup-form .signup-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  border-radius: 16px;
+  background-color: rgba(29, 93, 155, 0.8);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 68px;
+}
+.signup-wrapper .signup-form .signup-form-button:active {
+  transform: scale(1.03);
+}
+.signup-wrapper .signup-form .signup-form-button:disabled {
+  background-color: #dbdbdb;
+  color: #000000;
 }/*# sourceMappingURL=main.css.map */

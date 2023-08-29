@@ -1,6 +1,11 @@
 import { InputProps } from './Input.interface';
 
-export default function Input({ placeholder, type, setValue }: InputProps) {
+export default function Input({
+    placeholder,
+    type,
+    setValue,
+    disabled,
+}: InputProps) {
     const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
     };
@@ -12,6 +17,7 @@ export default function Input({ placeholder, type, setValue }: InputProps) {
                 type={type}
                 placeholder={placeholder}
                 onChange={onChangeValue}
+                disabled={disabled}
             />
         </div>
     );
