@@ -250,7 +250,12 @@ export const Header = () => {
                 </div>
             </header>
             {isSearch.region === 'actives' && <Region data={demmy} />}
-            {isSearch.dayAndTime === 'actives' && <HeaderLocalAndTitle />}
+            {isSearch.dayAndTime === 'actives' && (
+                <HeaderLocalAndTitle
+                    dayTitle={dayTitle}
+                    setDayTitle={setDayTitle}
+                />
+            )}
         </>
     );
 };

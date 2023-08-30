@@ -753,7 +753,7 @@ input {
   margin-bottom: 10px;
 }
 .localTitleLayout .day {
-  width: 33.3%;
+  width: 33.33%;
   text-align: center;
   line-height: 29px;
   color: #6e6e6e;
@@ -764,6 +764,23 @@ input {
   border-left: 1px #1d5d9d solid;
 }
 .localTitleLayout .day:hover {
-  background-color: #1d5d9d;
+  background-color: #96bfe9;
+  color: #ffffff;
+}
+.localTitleLayout .onDay {
+  width: 33.33%;
+  text-align: center;
+  line-height: 29px;
+  color: #6e6e6e;
+  cursor: pointer;
+  background: #1d5d9b;
+  color: #ffffff;
+}
+.localTitleLayout .onDay:nth-child(even) {
+  border-right: 1px #1d5d9d solid;
+  border-left: 1px #1d5d9d solid;
+}
+.localTitleLayout .onDay:hover {
+  background-color: #96bfe9;
   color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
