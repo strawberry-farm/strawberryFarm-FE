@@ -13,10 +13,8 @@
         border-right: 1px #dcdcdc solid;
         width: 30%;
         overflow: auto;
-
         .cityLow {
             padding: 23.3px;
-
             &:hover {
                 cursor: pointer;
                 background-color: #ececec;
@@ -28,10 +26,16 @@
         display: flex;
         justify-items: flex-start;
         .localLayout {
-            padding: 23.3px;
+            text-align: start;
+            padding: 29.5px 29.5px;
             border-bottom: 1px #dcdcdc solid;
-            height: 14px;
+            height: 50px;
             width: 50%;
+            font-weight: 400;
+            span {
+                position: relative;
+                top: -8px;
+            }
             &:nth-child(odd) {
                 border-right: 1px #dcdcdc solid;
             }

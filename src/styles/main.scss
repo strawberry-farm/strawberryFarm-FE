@@ -9,5 +9,11 @@
 @import './layout/@common/codeConfirm';
 
 @import './layout/signin/signin';
+
 @import './layout/signup/signup';
-@import './layout/password/password-reset';
+
+// header
+@import './layout/header/dropdown';
+@import './layout/header/header';
+@import './layout/header/region';
+@import './layout/header/localTitle';
