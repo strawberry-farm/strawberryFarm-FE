@@ -9,8 +9,9 @@ import { SearchTag } from './HeaderSearchTag';
 import { useNavigate } from 'react-router-dom';
 import { useFocus } from '../../hooks/useFocus';
 import { UserDropDown } from './HeaderDropdown';
-import { Region } from './HeaderRegion';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
+import { Region } from './HeaderRegion';
+
 const demmy: RegionProps[] = [
     {
         sidoName: '서울',
@@ -156,7 +157,7 @@ export const Header = () => {
         }
     };
 
-    const jwt = true; // 임시
+    const jwt = false; // 임시
     return (
         <>
             <header className="headers">
@@ -244,7 +245,11 @@ export const Header = () => {
                             </>
                         )}
                         {isMemu && (
-                            <UserDropDown jwt={jwt} situation={isMemu} />
+                            <UserDropDown
+                                jwt={jwt}
+                                situation={isMemu}
+                                setSituation={setIsMemu}
+                            />
                         )}
                     </div>
                 </div>

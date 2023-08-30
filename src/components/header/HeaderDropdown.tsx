@@ -1,42 +1,43 @@
+import { useNavigate } from 'react-router-dom';
 import { Situation } from './Header.interface';
 
-export const UserDropDown = (props: { jwt: boolean; situation: Situation }) => {
-    const userMemu = [
-        '내모임',
-        '내채팅방',
-        '위시리스트',
-        '운영중인 모임',
-        '로그아웃',
-    ];
-    const guestMemu = ['로그인', '회원가입'];
+export const UserDropDown = (props: {
+    jwt: boolean;
+    situation: Situation;
+    setSituation: React.Dispatch<React.SetStateAction<Situation>>;
+}) => {
+    const navigator = useNavigate();
     if (props.situation.user === true) {
         return (
             <>
                 <div className="dropdownLayout">
                     <div className="dropdownLow">
-                        {userMemu.map((item, idx) => {
-                            return (
-                                <div className="dropdown" key={idx}>
-                                    {item}
-                                </div>
-                            );
-                        })}
+                        <div className="dropdown">내모임</div>
+                        <div className="dropdown">내채팅방</div>
+                        <div className="dropdown">위시리스트</div>
+                        <div className="dropdown">운영중인 모임</div>
+                        <div className="dropdown">로그아웃</div>
                     </div>
                 </div>
             </>
         );
     }
+    const onNav = (e: React.MouseEvent) => {
+        const target = e.target as HTMLDivElement;
+        if (target.innerHTML === '로그인') navigator('/signin');
+        if (target.innerHTML === '회원가입') navigator('/signup');
+        props.setSituation({ user: false, alarm: false, guest: false });
+    };
     if (props.situation.guest === true) {
         return (
             <div className="dropdownLayout">
                 <div className="dropdownLow">
-                    {guestMemu.map((item, idx) => {
-                        return (
-                            <div className="dropdown" key={idx}>
-                                {item}
-                            </div>
-                        );
-                    })}
+                    <div className="dropdown" onClick={onNav}>
+                        로그인
+                    </div>
+                    <div className="dropdown" onClick={onNav}>
+                        회원가입
+                    </div>
                 </div>
             </div>
         );

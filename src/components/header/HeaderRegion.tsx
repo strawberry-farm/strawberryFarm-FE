@@ -10,10 +10,8 @@ export const Region = (props: { data: RegionProps[] }) => {
         const fliter = data.filter(
             (item: { sidoName: string }) => item.sidoName === title.innerText,
         );
-        console.log(fliter[0].sigungu, '핗터');
         setLocal(fliter[0].sigungu);
     };
-    console.log(local);
 
     return (
         <div className="layout">
