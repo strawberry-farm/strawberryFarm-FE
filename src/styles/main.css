@@ -783,4 +783,54 @@ input {
 .localTitleLayout .onDay:hover {
   background-color: #1d5d9d;
   color: #ffffff;
+}
+
+.footerLayout {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  border-top: 1px solid #dadce0;
+  flex-direction: column;
+  margin: 10px auto;
+  padding-top: 10px;
+}
+.footerLayout .footerContent {
+  margin-left: 10px;
+  display: flex;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  justify-content: flex-start;
+  width: 100%;
+}
+.footerLayout .footerContent .footerTilte {
+  box-sizing: border-box;
+  min-width: 0;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #828282;
+  font-weight: bold;
+  padding: 10px 0;
+}
+.footerLayout .footerMain {
+  margin: 0;
+  min-width: 0;
+  color: #999999;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px 20px 5px 20px;
+}
+.footerLayout .footerEtc {
+  margin: 0;
+  min-width: 0;
+  color: #999999;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px 20px 5px 20px;
 }/*# sourceMappingURL=main.css.map */
