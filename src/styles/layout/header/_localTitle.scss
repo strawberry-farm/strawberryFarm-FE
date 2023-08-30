@@ -9,6 +9,7 @@
 }
 @mixin selectTag {
     width: 33.33%;
+
     text-align: center;
     line-height: 29px;
     color: #6e6e6e;
@@ -19,7 +20,8 @@
         border-left: 1px #1d5d9d solid;
     }
     &:hover {
-        background-color: #96bfe9;
+        background-color: #1d5d9d;
+
         color: #ffffff;
     }
 }
@@ -49,6 +51,7 @@
     .day {
         @include selectTag;
     }
+
     .onDay {
         @include selectTag;
         background: #1d5d9b;
