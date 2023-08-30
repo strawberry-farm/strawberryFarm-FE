@@ -1,15 +1,15 @@
 import React from 'react';
-// import classNames from 'classnames';
+import classNames from 'classnames';
 import '../../../styles/layout/header/_header.scss';
-const SearchTag = (props: {
+export const SearchTag = (props: {
     onClickProps: string;
     children: React.ReactNode;
     className: string;
 }) => {
     return (
         <div
-        // className={classNames(props.className, props.onClickProps)}
-        // onClick={onClickHandler}
+            className={classNames(props.className, props.onClickProps)}
+            // onClick={onClickHandler}
         >
             {props.children}
         </div>
@@ -18,4 +18,3 @@ const SearchTag = (props: {
 SearchTag.defaultProps = {
     onClickProps: 'basic',
 };
-export default SearchTag;

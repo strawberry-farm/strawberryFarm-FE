@@ -1,5 +1,5 @@
 import { useRef, useState, useLayoutEffect } from 'react';
-const useFocus = (defaultFocused = false) => {
+export const useFocus = (defaultFocused = false) => {
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(defaultFocused); // input focus 감지하는 state
 
@@ -24,5 +24,3 @@ const useFocus = (defaultFocused = false) => {
 
     return { ref, isFocused, setIsFocused };
 };
-
-export default useFocus;

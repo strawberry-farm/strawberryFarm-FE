@@ -1,8 +1,6 @@
-import '../../../styles/layout/dropdown/_dropdown.scss';
-import { Situation } from '../../../components/header/Header.interface';
-export const UserDropDown = (props: { jwt: boolean; situation: Situation }) => {
-    console.log(props.jwt);
+import { Situation } from './Header.interface';
 
+export const UserDropDown = (props: { jwt: boolean; situation: Situation }) => {
     const userMemu = [
         '내모임',
         '내채팅방',
@@ -71,8 +69,4 @@ export const UserDropDown = (props: { jwt: boolean; situation: Situation }) => {
             </div>
         );
     }
-};
-
-export const RegionDropDown = () => {
-    return <></>;
 };

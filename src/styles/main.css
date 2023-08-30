@@ -438,97 +438,332 @@ input {
   color: #000000;
 }
 
-.password-reset-wrapper {
+.dropdownLayout {
+  width: 100%;
+  height: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: right;
 }
-.password-reset-wrapper .password-reset-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 480px;
-  margin: 100px 0;
+
+.dropdownLow {
+  position: absolute;
+  top: 110px;
+  text-align: start;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 130px;
+  padding: 10px;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-title {
-  font-size: 40px;
-  font-weight: 500;
-  color: #000000;
-}
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin: 54px 0 40px 0;
-  width: inherit;
-}
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-regex {
-  display: block;
-  width: inherit;
-  height: 15px;
-  font-size: 15px;
-  color: rgb(255, 73, 73);
-}
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm {
-  display: flex;
-  gap: 16px;
-  width: 480px;
-  height: 68px;
-}
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .email-certificate-button,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .code-certificate-button,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .email-certificate-button,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .code-certificate-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  height: inherit;
-  border-radius: 16px;
-  background-color: rgba(29, 93, 155, 0.8);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  color: white;
-  transition: 0.3s;
+
+.dropdown {
   cursor: pointer;
-  width: 132px;
-  font-size: 18px;
-  white-space: nowrap;
+  color: #000;
+  padding: 15px 0px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .email-certificate-button:active,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-email-group .code-certificate-button:active,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .email-certificate-button:active,
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm .code-certificate-button:active {
-  transform: scale(1.03);
+.dropdown:hover {
+  color: #1d5d9b;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-input-area .password-reset-form-code-confirm-group {
+.dropdown:nth-child(4) {
+  border-top: 1px #e4e4e4 solid;
+  border-bottom: 1px #e4e4e4 solid;
+}
+
+.alarmLayout {
+  position: absolute;
+  top: 110px;
+  text-align: start;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 250px;
+  padding: 20px;
+  min-height: 150px;
+}
+.alarmLayout .alarmTitle {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.alarmLayout .alarmTitle img {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  width: 18px;
+  height: 20px;
+}
+.alarmLayout .alarmLow {
+  width: 85%;
+  padding: 15px;
+  margin: 0 auto;
+  border: 1px solid #dbdbdb;
+}
+.alarmLayout .alarmLow:hover {
+  background-color: #f2f2f2;
+}
+.alarmLayout .alarmLow .alarmText {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: inherit;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  height: inherit;
-  border-radius: 16px;
-  background-color: rgba(29, 93, 155, 0.8);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  color: white;
-  transition: 0.3s;
+.alarmLayout .alarmLow .alarmText .text {
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+}
+.alarmLayout .alarmLow .alarmText img {
+  position: relative;
+  left: 6px;
+  bottom: 6px;
   cursor: pointer;
-  height: 68px;
+  width: 18px;
+  height: 18px;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-button:active {
-  transform: scale(1.03);
+
+.headers {
+  width: 100%;
+  height: 160px;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.password-reset-wrapper .password-reset-form .password-reset-form-button:disabled {
-  background-color: #dbdbdb;
-  color: #000000;
+.headers .headLayout {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.headers .headLayout .headersLogo {
+  cursor: pointer;
+  width: 20%;
+}
+.headers .headLayout .headersLogo img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.headers .headLayout .headersLogo span {
+  position: relative;
+  top: -10px;
+  margin-left: 5px;
+  color: #1d5d9b;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.headers .headLayout .searchLayout {
+  width: 60%;
+  flex-shrink: 0;
+}
+.headers .headLayout .searchLayout .search {
+  width: 515px;
+  height: 55px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 36px;
+  background: #fff;
+  padding: 5px 5px 0px 5px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+.headers .headLayout .searchLayout .search .stick {
+  width: 16px;
+  height: 16px;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+}
+.headers .headLayout .searchLayout .search .region {
+  display: flex;
+  color: #6e6e6e;
+  height: 45px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+}
+.headers .headLayout .searchLayout .search .region.actives {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  border-radius: 36px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.headers .headLayout .searchLayout .search .dayAndTime {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  color: #6e6e6e;
+  height: 45px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.headers .headLayout .searchLayout .search .dayAndTime.actives {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 36px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.headers .headLayout .searchLayout .search .searchInp {
+  flex: 2;
+  width: 50%;
+  color: #6e6e6e;
+  height: 45px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding-top: 3px;
+}
+.headers .headLayout .searchLayout .search .searchIconBtn {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.headers .headLayout .searchLayout .search .searchIconBtn img {
+  width: 30px;
+  height: 30px;
+}
+.headers .headLayout .userTool {
+  width: 20%;
+  text-align: right;
+}
+.headers .headLayout .userTool .memu {
+  position: relative;
+  top: 10px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.headers .headLayout .userTool .alarm {
+  position: relative;
+  top: 10px;
+  width: 25.18px;
+  height: 28.808px;
+  cursor: pointer;
+  right: 10px;
+}
+.headers .headLayout .userTool .userIcon {
+  position: relative;
+  top: 13px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.layout {
+  position: absolute;
+  left: 440px;
+  top: 120px;
+  width: 560px;
+  height: 250px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  overflow: hidden;
+}
+.layout .city {
+  border-right: 1px #dcdcdc solid;
+  width: 30%;
+  overflow: auto;
+}
+.layout .city .cityLow {
+  padding: 23.3px;
+}
+.layout .city .cityLow:hover {
+  cursor: pointer;
+  background-color: #ececec;
+}
+.layout .local {
+  width: 70%;
+  display: flex;
+  justify-items: flex-start;
+}
+.layout .local .localLayout {
+  text-align: start;
+  padding: 29.5px 29.5px;
+  border-bottom: 1px #dcdcdc solid;
+  height: 50px;
+  width: 50%;
+  font-weight: 400;
+}
+.layout .local .localLayout span {
+  position: relative;
+  top: -8px;
+}
+.layout .local .localLayout:nth-child(odd) {
+  border-right: 1px #dcdcdc solid;
+}
+.layout .local .localLayout:hover {
+  cursor: pointer;
+  background-color: #ececec;
+}
+
+.localTitleLayout {
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 580px;
+  top: 120px;
+  width: 360px;
+  height: 250px;
+  padding: 30px;
+}
+.localTitleLayout .titleName {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.localTitleLayout .dayLayout {
+  display: flex;
+  border-radius: 8px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #1d5d9d;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.localTitleLayout .day {
+  width: 33.3%;
+  text-align: center;
+  line-height: 29px;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+.localTitleLayout .day:nth-child(even) {
+  border-right: 1px #1d5d9d solid;
+  border-left: 1px #1d5d9d solid;
+}
+.localTitleLayout .day:hover {
+  background-color: #1d5d9d;
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */

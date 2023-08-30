@@ -29,7 +29,7 @@
 }
 
 .headers {
-    width: 1440px;
+    width: 100%;
     height: 160px;
     flex-shrink: 0;
     background: #fff;
@@ -142,7 +142,7 @@
             }
             .alarm {
                 @include userToolIcon(25.18px, 28.808px, 10px);
-                padding: 0 20px;
+                right: 10px;
             }
             .userIcon {
                 @include userToolIcon(36px, 36px, 13px);
