@@ -7,11 +7,13 @@
 @import './layout/@common/button';
 @import './layout/@common/modal';
 @import './layout/@common/codeConfirm';
+@import './layout//@common/slide';
+@import './layout//@common/pagination';
 
 @import './layout/signin/signin';
-
 @import './layout/signup/signup';
-
+// main
+@import './layout/main/main';
 // header
 @import './layout/header/dropdown';
 @import './layout/header/header';

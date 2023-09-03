@@ -1,0 +1,35 @@
+@mixin arrow {
+    color: gray;
+}
+.slick-arrow {
+    padding: 4px 6px;
+    background-color: transparent;
+    color: gray;
+    border-radius: 3px;
+    cursor: pointer;
+    // background-color: black;
+}
+.slick-prev:before {
+    @include arrow;
+    position: absolute;
+    top: -2px;
+}
+.slick-next:before {
+    @include arrow;
+    position: absolute;
+    top: -2px;
+    right: 5px;
+}
+.silderLayout {
+    width: 95%;
+    margin: 40px auto 20px auto;
+    .silderBox {
+        width: 16%;
+        cursor: pointer;
+        text-align: center;
+        img {
+            width: 50%;
+            margin: 5px auto;
+        }
+    }
+}
