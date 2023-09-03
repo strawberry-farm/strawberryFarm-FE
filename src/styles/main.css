@@ -275,6 +275,76 @@ input {
   color: rgb(255, 73, 73);
 }
 
+.slick-arrow {
+  padding: 4px 6px;
+  background-color: transparent;
+  color: gray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.slick-prev:before {
+  color: gray;
+  position: absolute;
+  top: -2px;
+}
+
+.slick-next:before {
+  color: gray;
+  position: absolute;
+  top: -2px;
+  right: 5px;
+}
+
+.silderLayout {
+  width: 95%;
+  margin: 40px auto 20px auto;
+}
+.silderLayout .silderBox {
+  width: 16%;
+  cursor: pointer;
+  text-align: center;
+}
+.silderLayout .silderBox img {
+  width: 50%;
+  margin: 5px auto;
+}
+
+.paginationNev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin: 16px;
+}
+
+.paginationButton {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
+}
+.paginationButton:hover {
+  background: #cdc6ee;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+.paginationButton[disabled] {
+  background: grey;
+  cursor: revert;
+  transform: revert;
+}
+.paginationButton[aria-current] {
+  background: #457cc7;
+  color: #fff;
+  font-weight: bold;
+  cursor: revert;
+  transform: revert;
+}
+
 .signin-wrapper {
   display: flex;
   align-items: center;
@@ -436,6 +506,104 @@ input {
 .signup-wrapper .signup-form .signup-form-button:disabled {
   background-color: #dbdbdb;
   color: #000000;
+}
+
+.MainLayout {
+  width: 80%;
+  margin: 0 auto 50px auto;
+  min-height: 60vh;
+}
+
+.mainContentsLayout {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.mainContentsLayout .mainContents {
+  width: 23%;
+  height: 240px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin: 40px auto 30px auto;
+}
+.mainContentsLayout .mainContents img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.mainContentsLayout .mainContents .ContentsTextBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .contentsTagBox {
+  width: 70%;
+  display: flex;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .contentsTagBox .contentsTag {
+  padding: 5px 10px;
+  margin: 0px 5px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .imgBox {
+  width: 30%;
+  text-align: end;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .imgBox img {
+  margin-right: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataTitle {
+  margin: 10px 5px 5px 5px;
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataLocation img {
+  margin: auto 5px;
+  width: 20px;
+  height: 20px;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataLocation span {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  top: -4px;
+  margin-left: 3px;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataPeople img {
+  margin: auto 5px;
+  width: 20px;
+  height: 20px;
+}
+.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataPeople span {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  top: -4px;
+  margin-left: 3px;
 }
 
 .dropdownLayout {

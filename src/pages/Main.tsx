@@ -1,5 +1,8 @@
-import React from 'react';
-
+import { MainPage } from '../components/main/Main';
 export const Main = () => {
-    return <div style={{ height: '60vh' }}>dd</div>;
+    return (
+        <>
+            <MainPage />
+        </>
+    );
 };

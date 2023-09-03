@@ -156,7 +156,6 @@ export const Header = () => {
             }
         }
     };
-
     const jwt = false; // 임시
     return (
         <>
