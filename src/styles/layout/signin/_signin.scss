@@ -1,7 +1,5 @@
 .signin-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include wrapper;
 
     .signin-form {
         display: flex;
