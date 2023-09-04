@@ -1,7 +1,5 @@
 .signup-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include wrapper;
 
     .signup-form {
         display: flex;
@@ -42,7 +40,7 @@
 
                 .email-certificate-button,
                 .code-certificate-button {
-                    @include button-blue;
+                    @include blue-fill-button;
                     width: 132px;
                     font-size: 18px;
                     white-space: nowrap;
@@ -58,7 +56,7 @@
         }
 
         .signup-form-button {
-            @include button-blue;
+            @include blue-fill-button;
             height: 68px;
 
             &:disabled {
