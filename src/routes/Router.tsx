@@ -4,6 +4,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import PasswordReset from '../pages/PasswordReset';
 import { Main } from '../pages/Main';
+import Detail from '../pages/Detail';
 
 export function Router() {
     return (
@@ -14,6 +15,7 @@ export function Router() {
                     <Route path="/signin" element={<Signin />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/password-reset" element={<PasswordReset />} />
+                    <Route path="/detail/:id" element={<Detail />} />
                 </Route>
             </Routes>
         </BrowserRouter>

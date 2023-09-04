@@ -33,7 +33,7 @@
                 font-size: 20px;
             }
             .modal-confirm-button {
-                @include button-blue;
+                @include blue-fill-button;
                 padding: 12px 28px;
                 width: 50%;
                 height: 48px;
