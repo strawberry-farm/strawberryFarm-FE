@@ -2,6 +2,7 @@
 @import './base/base';
 @import './base/reset';
 
+// common
 @import './layout/@common/input';
 @import './layout/@common/wrapper';
 @import './layout/@common/button';
@@ -10,14 +11,18 @@
 @import './layout//@common/slide';
 @import './layout//@common/pagination';
 
-@import './layout/signin/signin';
-@import './layout/signup/signup';
-// main
-@import './layout/main/main';
 // header
 @import './layout/header/dropdown';
 @import './layout/header/header';
 @import './layout/header/region';
 @import './layout/header/localTitle';
+
 //footer
 @import './layout/footer/footer';
+
+//page
+@import './layout/signin/signin';
+@import './layout/signup/signup';
+@import './layout/password/password-reset';
+@import './layout/detail/detail';
+@import './layout/main/main';

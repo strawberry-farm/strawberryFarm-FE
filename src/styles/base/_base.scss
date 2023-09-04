@@ -2,7 +2,7 @@
     font-family: Pretendard, 'Noto Sans KR', sans-serif;
 }
 
-@mixin button-blue {
+@mixin blue-fill-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,34 @@
     transition: 0.3s;
     cursor: pointer;
 
-    &:active {
+    &:active,
+    &:hover {
         transform: scale(1.03);
+    }
+}
+
+@mixin wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin question-button {
+    // width: 58px;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-position: under;
     }
 }

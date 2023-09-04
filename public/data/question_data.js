@@ -1,0 +1,38 @@
+export const QUESTION_DATA = [
+    {
+        qnaId: 1,
+        userId: 4,
+        profile: '',
+        nickName: '나는야메시',
+        contents: '매주 모이는 건가요?',
+        secret: true,
+        comments: '우선은 그렇게 생각하고 있습니다.',
+    },
+    {
+        qnaId: 2,
+        userId: 3,
+        profile: '',
+        nickName: '축구킹',
+        contents: '성비가 어떻게 되나요?',
+        secret: false,
+        comments: '',
+    },
+    {
+        qnaId: 3,
+        userId: 6,
+        profile: '',
+        nickName: '아이러브사커',
+        contents: '모임 분위기는 어떤가요?',
+        secret: true,
+        comments: '',
+    },
+    {
+        qnaId: 4,
+        userId: 5,
+        profile: '',
+        nickName: '하하하',
+        contents: '모임 분위기는 어떤가요?',
+        secret: false,
+        comments: '아주 좋아요',
+    },
+];
