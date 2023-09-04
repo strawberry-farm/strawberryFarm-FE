@@ -162,7 +162,7 @@ export const Header = () => {
             <header className="headers">
                 <div className="headLayout">
                     <div className="headersLogo" onClick={() => navigator('/')}>
-                        <img src="./icons/personRunning.png" alt="logo" />
+                        <img src="/icons/personRunning.png" alt="logo" />
                         <span>둘이서</span>
                     </div>
                     <div className="searchLayout">
@@ -197,7 +197,7 @@ export const Header = () => {
                                 ref={ref}
                             />
                             <div className="searchIconBtn">
-                                <img src="./icons/search.png" alt="검색버튼" />
+                                <img src="/icons/search.png" alt="검색버튼" />
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@ export const Header = () => {
                                     })
                                 }
                                 className="memu"
-                                src="./icons/memu.png"
+                                src="/icons/memu.png"
                                 alt="사용자메뉴"
                             />
                         )}
