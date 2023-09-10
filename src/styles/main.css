@@ -277,6 +277,14 @@ textarea {
   color: rgb(255, 73, 73);
 }
 
+.slick-slider {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  z-index: 0;
+}
+
 .slick-arrow {
   padding: 4px 6px;
   background-color: transparent;
@@ -301,6 +309,7 @@ textarea {
 .silderLayout {
   width: 95%;
   margin: 40px auto 20px auto;
+  z-index: 0;
 }
 .silderLayout .silderBox {
   width: 16%;
@@ -347,276 +356,17 @@ textarea {
   transform: revert;
 }
 
-.signin-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.signin-wrapper .signin-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 480px;
-  margin: 100px 0;
-}
-.signin-wrapper .signin-form .signin-form-title {
-  font-size: 40px;
-  font-weight: 500;
-  color: #000000;
-}
-.signin-wrapper .signin-form .signin-form-input-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin: 54px 0 40px 0;
-  width: inherit;
-}
-.signin-wrapper .signin-form .signin-form-input-area .signin-form-regex {
-  display: block;
-  width: inherit;
-  height: 15px;
-  font-size: 15px;
-  color: rgb(255, 73, 73);
-}
-.signin-wrapper .signin-form .signin-form-button-area {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: inherit;
-}
-.signin-wrapper .signin-form .signin-form-button-area .signin-form-kakao-button {
-  height: 68px;
-  border-radius: 12px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  cursor: pointer;
-}
-.signin-wrapper .signin-form .signin-form-button-area .signin-form-kakao-button:active {
-  transform: scale(1.03);
-}
-.signin-wrapper .signin-form .signin-form-sub-area {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 40px;
-  width: 100%;
-}
-.signin-wrapper .signin-form .signin-form-sub-area .signin-form-sub-content {
-  font-size: 18px;
-  color: #878787;
-  cursor: pointer;
-}
-.signin-wrapper .signin-form .signin-form-sub-area .signin-form-sub-content span {
-  font-weight: 600;
-  color: rgba(29, 93, 155, 0.8);
-}
-
-.signup-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.signup-wrapper .signup-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 480px;
-  margin: 100px 0;
-}
-.signup-wrapper .signup-form .signup-form-title {
-  font-size: 40px;
-  font-weight: 500;
-  color: #000000;
-}
-.signup-wrapper .signup-form .signup-form-input-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin: 54px 0 40px 0;
-  width: inherit;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-regex {
-  display: block;
-  width: inherit;
-  height: 15px;
-  font-size: 15px;
-  color: rgb(255, 73, 73);
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm {
-  display: flex;
-  gap: 16px;
-  width: 480px;
-  height: 68px;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .code-certificate-button,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .code-certificate-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  height: inherit;
-  border-radius: 16px;
-  background-color: rgba(29, 93, 155, 0.8);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  color: white;
-  transition: 0.3s;
-  cursor: pointer;
-  width: 132px;
-  font-size: 18px;
-  white-space: nowrap;
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .email-certificate-button:active,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-email-group .code-certificate-button:active,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .email-certificate-button:active,
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm .code-certificate-button:active {
-  transform: scale(1.03);
-}
-.signup-wrapper .signup-form .signup-form-input-area .signup-form-code-confirm-group {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: inherit;
-}
-.signup-wrapper .signup-form .signup-form-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  height: inherit;
-  border-radius: 16px;
-  background-color: rgba(29, 93, 155, 0.8);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  color: white;
-  transition: 0.3s;
-  cursor: pointer;
-  height: 68px;
-}
-.signup-wrapper .signup-form .signup-form-button:active {
-  transform: scale(1.03);
-}
-.signup-wrapper .signup-form .signup-form-button:disabled {
-  background-color: #dbdbdb;
-  color: #000000;
-}
-
-.MainLayout {
-  width: 80%;
-  margin: 0 auto 50px auto;
-  min-height: 60vh;
-}
-
-.mainContentsLayout {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.mainContentsLayout .mainContents {
-  width: 23%;
-  height: 240px;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  margin: 40px auto 30px auto;
-}
-.mainContentsLayout .mainContents img {
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
-}
-.mainContentsLayout .mainContents .ContentsTextBox {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .contentsTagBox {
-  width: 70%;
-  display: flex;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .contentsTagBox .contentsTag {
-  padding: 5px 10px;
-  margin: 0px 5px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .imgBox {
-  width: 30%;
-  text-align: end;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsDateBox .imgBox img {
-  margin-right: 5px;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataTitle {
-  margin: 10px 5px 5px 5px;
-  color: #000;
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataLocation img {
-  margin: auto 5px;
-  width: 20px;
-  height: 20px;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataLocation span {
-  color: #000;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  position: relative;
-  top: -4px;
-  margin-left: 3px;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataPeople img {
-  margin: auto 5px;
-  width: 20px;
-  height: 20px;
-}
-.mainContentsLayout .mainContents .ContentsTextBox .contentsData .dataPeople span {
-  color: #000;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  position: relative;
-  top: -4px;
-  margin-left: 3px;
-}
-
 .dropdownLayout {
   width: 100%;
   height: auto;
+  z-index: 100;
   display: flex;
   justify-content: right;
 }
 
 .dropdownLow {
   position: absolute;
+  z-index: 100;
   top: 110px;
   text-align: start;
   border: 1px solid #e4e4e4;
@@ -846,9 +596,10 @@ textarea {
 
 .layout {
   position: absolute;
-  left: 440px;
+  left: 450px;
   top: 120px;
-  width: 560px;
+  z-index: 1000;
+  width: 570px;
   height: 250px;
   border: 1px solid #dcdcdc;
   border-radius: 20px;
@@ -899,6 +650,7 @@ textarea {
   background-color: #ffffff;
   position: absolute;
   left: 580px;
+  z-index: 100;
   top: 120px;
   width: 360px;
   height: 250px;
@@ -1741,6 +1493,7 @@ textarea {
   width: 80%;
   margin: 0 auto 50px auto;
   min-height: 60vh;
+  z-index: -1;
 }
 
 .mainContentsLayout {

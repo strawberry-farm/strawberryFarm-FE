@@ -1,8 +1,9 @@
 .layout {
     position: absolute;
-    left: 440px;
+    left: 450px;
     top: 120px;
-    width: 560px;
+    z-index: 1000;
+    width: 570px;
     height: 250px;
     border: 1px solid #dcdcdc;
     border-radius: 20px;
