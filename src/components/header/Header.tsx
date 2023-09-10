@@ -11,6 +11,8 @@ import { useFocus } from '../../hooks/useFocus';
 import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';
+import { useRecoilValue } from 'recoil';
+import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
 
 const demmy: RegionProps[] = [
     {
@@ -96,6 +98,9 @@ const demmy: RegionProps[] = [
 export const Header = () => {
     const searchRef = useRef<HTMLDivElement>(null);
     const navigator = useNavigate();
+    const regionValue = useRecoilValue(dropRogionState);
+    const dayAndTime = useRecoilValue(dropDayAndTimeState);
+
     const { ref, isFocused } = useFocus(false);
     const [isMemu, setIsMemu] = useState<Situation>({
         user: false,
@@ -175,7 +180,7 @@ export const Header = () => {
                                 className={'region'}
                                 onClickProps={isSearch.region}
                             >
-                                지역{' '}
+                                {regionValue === '' ? '지역' : regionValue}
                             </SearchTag>
                             {isSearch.region.includes('basic') &&
                                 isSearch.dayAndTime.includes('basic') && (
@@ -186,7 +191,9 @@ export const Header = () => {
                                 className={'dayAndTime'}
                                 onClickProps={isSearch.dayAndTime}
                             >
-                                요일·시간대{' '}
+                                {dayAndTime.day && dayAndTime.time === ''
+                                    ? '요일·시간대'
+                                    : dayAndTime.day + '·' + dayAndTime.time}
                             </SearchTag>
                             {isSearch.dayAndTime.includes('basic') && (
                                 <span className="stick">|</span>
@@ -227,7 +234,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="alarm"
-                                    src="./icons/alarm.png"
+                                    src="/icons/alarm.png"
                                     alt="알림"
                                 />
                                 <img
@@ -238,7 +245,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="userIcon"
-                                    src="./icons/userIcon.png"
+                                    src="/icons/userIcon.png"
                                     alt="유저메뉴"
                                 />
                             </>

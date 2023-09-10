@@ -1,6 +1,13 @@
 @mixin arrow {
     color: gray;
 }
+.slick-slider {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+    z-index: 0;
+}
 .slick-arrow {
     padding: 4px 6px;
     background-color: transparent;
@@ -23,6 +30,7 @@
 .silderLayout {
     width: 95%;
     margin: 40px auto 20px auto;
+    z-index: 0;
     .silderBox {
         width: 16%;
         cursor: pointer;

@@ -4,3 +4,7 @@ export interface modalStateType {
     confirm: string;
     url: string;
 }
+export interface dropDayAndTimeType {
+    day: string;
+    time: string;
+}
