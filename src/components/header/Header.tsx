@@ -161,6 +161,9 @@ export const Header = () => {
             }
         }
     };
+
+    console.log(dayAndTime);
+
     const jwt = false; // 임시
     return (
         <>
@@ -191,7 +194,7 @@ export const Header = () => {
                                 className={'dayAndTime'}
                                 onClickProps={isSearch.dayAndTime}
                             >
-                                {dayAndTime.day && dayAndTime.time === ''
+                                {dayAndTime.day === '' && dayAndTime.time === ''
                                     ? '요일·시간대'
                                     : dayAndTime.day + '·' + dayAndTime.time}
                             </SearchTag>
