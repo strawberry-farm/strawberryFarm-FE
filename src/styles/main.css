@@ -707,15 +707,20 @@ textarea {
   color: #ffffff;
 }
 
+.footer {
+  width: 100%;
+  border-top: 1px solid #dadce0;
+}
+
 .footerLayout {
   display: flex;
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  border-top: 1px solid #dadce0;
   flex-direction: column;
   margin: 10px auto;
   padding-top: 10px;
+  width: 80%;
 }
 .footerLayout .footerContent {
   margin-left: 10px;
