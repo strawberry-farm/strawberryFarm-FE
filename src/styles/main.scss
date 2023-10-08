@@ -10,6 +10,7 @@
 @import './layout/@common/codeConfirm';
 @import './layout//@common/slide';
 @import './layout//@common/pagination';
+@import './layout//@common/addressModal';
 
 // header
 @import './layout/header/dropdown';
@@ -19,7 +20,8 @@
 
 //footer
 @import './layout/footer/footer';
-
+//write
+@import './layout/write/write';
 //page
 @import './layout/signin/signin';
 @import './layout/signup/signup';
