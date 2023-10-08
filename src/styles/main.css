@@ -762,6 +762,50 @@ textarea {
   margin: 20px 20px 5px 20px;
 }
 
+.write {
+  width: 100%;
+  display: flex;
+  min-height: 70vh;
+}
+.write .memuLayout {
+  width: 30%;
+  min-height: 60vh;
+  border-right: 1px solid #cccccc;
+  background-color: #fafafa;
+  margin-top: 3px;
+  padding-right: 10px;
+}
+.write .memuLayout .memu {
+  width: 70%;
+  margin-top: 50px;
+  padding: 15px;
+  float: right;
+}
+.write .memuLayout .memu .memuTitle {
+  padding: 10px;
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.write .memuLayout .memu .memuTitle img {
+  padding-right: 20px;
+  float: right;
+  background-image: "/icons/checkboxBin.png";
+}
+.write .memuLayout .memu .active {
+  border-radius: 8px;
+  border: 3px solid #1d5d9b;
+}
+.write .writeTitleLayout {
+  padding: 35px;
+  margin-top: 50px;
+  width: 70%;
+  height: 60vh;
+}
+
 .signin-wrapper {
   display: flex;
   justify-content: center;
