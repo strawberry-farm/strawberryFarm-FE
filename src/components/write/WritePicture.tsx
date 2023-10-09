@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { writeState } from '../../atom/writeState';
+import { asyncUploads } from '../../hooks/upload';
 
 const WritePicture = (props: {
     setView: React.Dispatch<React.SetStateAction<number>>;
@@ -9,6 +10,7 @@ const WritePicture = (props: {
     const [folder, setFolder] = useState();
     const [tagText, setTagText] = useState('');
     const [tagBox, setTagBox] = useState(['모임']);
+    console.log(folder);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTagText(e.target.value);
@@ -39,28 +41,6 @@ const WritePicture = (props: {
             targetParentNode.remove();
         }
     };
-    /**
-     *  업로드
-     * @param {e} 정보 받음
-     *  파일 데이터 받은후  postData에 저장;
-     *    */
-    const uploadHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const target: any = e.currentTarget;
-        const files = (target.files as FileList)[0];
-        if (files === undefined) {
-            return;
-        } else {
-            const fileReader = new FileReader();
-            fileReader.readAsDataURL(files);
-            fileReader.addEventListener('loadend', (e: any) => {
-                setfileName(e.target.result);
-            });
-            const formData: any = new FormData();
-            console.log(formData, 'formData');
-            formData.append('files', files);
-            setFolder(formData);
-        }
-    };
     const [write, setWtite] = useRecoilState(writeState);
     const onNextOnclick = () => {
         setWtite({
@@ -68,7 +48,7 @@ const WritePicture = (props: {
             tag: tagBox,
             imge: folder,
         });
-        //
+
         props.setView((prev) => prev + 1);
     };
 
@@ -94,8 +74,13 @@ const WritePicture = (props: {
                     <input
                         type="file"
                         id="file"
-                        onChange={uploadHandler}
+                        // onChange={uploadHandler}
                         accept="image/*"
+                        onChange={(e) => {
+                            if (!e.target.files) return;
+                            asyncUploads(e).then((res: any) => setFolder(res));
+                            e.target.value = '';
+                        }}
                     />
                 </div>
                 <div className="hashTagBox">
