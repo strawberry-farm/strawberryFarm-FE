@@ -162,8 +162,6 @@ export const Header = () => {
         }
     };
 
-    console.log(dayAndTime);
-
     const jwt = false; // 임시
     return (
         <>

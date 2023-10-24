@@ -6,6 +6,7 @@ import PasswordReset from '../pages/PasswordReset';
 import { Main } from '../pages/Main';
 import Detail from '../pages/Detail';
 import { Write } from '../pages/Write';
+import { ChatRoom } from '../pages/ChatRoom';
 
 export function Router() {
     return (
@@ -18,6 +19,7 @@ export function Router() {
                     <Route path="/password-reset" element={<PasswordReset />} />
                     <Route path="/detail/:id" element={<Detail />} />
                     <Route path="/write" element={<Write />} />
+                    <Route path="/chatroom" element={<ChatRoom />} />
                 </Route>
             </Routes>
         </BrowserRouter>

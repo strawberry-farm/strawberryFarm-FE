@@ -6,6 +6,8 @@ import { modalState } from '../../atom/modalState';
 import Portal from '../@common/modal/portal/Portal';
 import ConfirmModal from '../@common/modal/ConfirmModal';
 import CodeConfirm from '../@common/codeConfirm/CodeConfirm';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 
 export default function SignupForm() {
     const [modal, setModal] = useRecoilState(modalState);
@@ -24,11 +26,26 @@ export default function SignupForm() {
     const [active, setActive] = useState<boolean>(true);
     const [timer, setTimer] = useState<number>(179);
 
+    // const PROXY = window.location.hostname === 'localhost' ? '/farm' : '';
     const sendAuthenticationCode = () => {
         // http 요청 전
         !email && setEmpty(true);
-
+        axios.post(
+            `proxy/auth/email-request`,
+            {
+                email: email,
+            },
+            {
+                withCredentials: true, // 쿠키 cors 통신 설정
+            },
+            // {
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            // },
+        );
         // http 요청 후 인증 성공
+
         setModal({
             ...modal,
             content: '인증번호가 전송되었습니다',

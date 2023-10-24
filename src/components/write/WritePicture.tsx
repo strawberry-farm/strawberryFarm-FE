@@ -48,7 +48,6 @@ const WritePicture = (props: {
             tag: tagBox,
             imge: folder,
         });
-
         props.setView((prev) => prev + 1);
     };
 
