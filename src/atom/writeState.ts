@@ -12,7 +12,7 @@ export const writeState = atom<WriteData>({
         },
         detail: '',
         local: {
-            bcode: 'ß',
+            bcode: '',
             addr: '',
             addrDitle: '',
             x: '',
