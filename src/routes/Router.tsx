@@ -1,12 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
+import MyPageUser from '../components/mypage/mypage-user/MyPageUser';
+import { ChatRoom } from '../pages/ChatRoom';
+import Detail from '../pages/Detail';
+import { Main } from '../pages/Main';
+import MyPage from '../pages/MyPage';
+import PasswordReset from '../pages/PasswordReset';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
-import PasswordReset from '../pages/PasswordReset';
-import { Main } from '../pages/Main';
-import Detail from '../pages/Detail';
 import { Write } from '../pages/Write';
-import { ChatRoom } from '../pages/ChatRoom';
 
 export function Router() {
     return (
@@ -20,6 +22,9 @@ export function Router() {
                     <Route path="/detail/:id" element={<Detail />} />
                     <Route path="/write" element={<Write />} />
                     <Route path="/chatroom" element={<ChatRoom />} />
+                    <Route path="/mypage/" element={<MyPage />}>
+                        <Route path="user" element={<MyPageUser />} />
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
