@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { MypageSidebarItemProps } from './MypageSidebar.interface';
 
 export default function MypageSidebarItem(menu: MypageSidebarItemProps) {
-    const { title, path, divider } = menu;
-
-    const dividerClassName = divider ? 'mypage-Sidebar-item-divider' : '';
+    const { title, path, className } = menu;
 
     return (
-        <li className={`mypage-Sidebar-item ${dividerClassName}`}>
-            <Link to={path}>{title}</Link>
+        <li className={`mypage-sidebar-menu-item ${className || ''}`}>
+            <Link to={path} className="mypage-sidebar-menu-link">
+                {title}
+            </Link>
         </li>
     );
 }
