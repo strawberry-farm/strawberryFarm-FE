@@ -1,4 +1,6 @@
 @import './mypage-sidebar';
+@import './mypage-list';
+@import './mypage-user';
 
 .mypage {
     display: flex;
@@ -14,4 +16,10 @@
 .mypage-subpage {
     width: 66%;
     max-width: 1460px;
+    padding: 100px 4% 0 4%;
+}
+
+.mypage-title {
+    margin-bottom: 60px;
+    font-size: 24px;
 }
