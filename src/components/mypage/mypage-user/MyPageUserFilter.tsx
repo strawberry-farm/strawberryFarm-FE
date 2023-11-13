@@ -11,7 +11,7 @@ export default function MyPageUserFilter() {
         <div className="mypage-user-filter">
             <button
                 type="button"
-                className="mypage-user-filter-button"
+                className="mypage-user-filter-button active"
                 onClick={handleFilterCilck}
             >
                 참여중
