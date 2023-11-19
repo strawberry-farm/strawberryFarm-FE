@@ -31,18 +31,18 @@ export default function SignupForm() {
         // http 요청 전
         !email && setEmpty(true);
         axios.post(
-            `proxy/auth/email-request`,
+            `https://strawberryfarm.shop/auth/email-request`,
             {
                 email: email,
             },
             {
-                withCredentials: true, // 쿠키 cors 통신 설정
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true',
+                },
+                withCredentials: false, // 쿠키 cors 통신 설정
             },
-            // {
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            // },
         );
         // http 요청 후 인증 성공
 
