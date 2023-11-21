@@ -7,7 +7,7 @@ import Portal from '../@common/modal/portal/Portal';
 import ConfirmModal from '../@common/modal/ConfirmModal';
 import CodeConfirm from '../@common/codeConfirm/CodeConfirm';
 import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
+import axios from '../../Lib/Axios';
 
 export default function SignupForm() {
     const [modal, setModal] = useRecoilState(modalState);
@@ -26,36 +26,43 @@ export default function SignupForm() {
     const [active, setActive] = useState<boolean>(true);
     const [timer, setTimer] = useState<number>(179);
 
-    // const PROXY = window.location.hostname === 'localhost' ? '/farm' : '';
+    const emailRequset = useMutation((email: string) =>
+        axios
+            .post(
+                '/auth/email-request',
+                {
+                    email: email,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Credentials': 'true',
+                    },
+                    withCredentials: false, // 쿠키 cors 통신 설정
+                },
+            )
+            .then((res: any) => {
+                console.log(res);
+                if (res.message === 'Success') {
+                    // http 요청 후 인증 성공
+                    setModal({
+                        ...modal,
+                        content: '인증번호가 전송되었습니다',
+                        confirm: '확인',
+                        modalOpen: true,
+                        url: '',
+                    });
+                    setAuthenticating(true);
+                    setDisabled(true);
+                }
+            }),
+    );
+
     const sendAuthenticationCode = () => {
         // http 요청 전
         !email && setEmpty(true);
-        axios.post(
-            `proxy/auth/email-request`,
-            {
-                email: email,
-            },
-            {
-                withCredentials: true, // 쿠키 cors 통신 설정
-            },
-            // {
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            // },
-        );
-        // http 요청 후 인증 성공
-
-        setModal({
-            ...modal,
-            content: '인증번호가 전송되었습니다',
-            confirm: '확인',
-            modalOpen: true,
-            url: '',
-        });
-        setAuthenticating(true);
-        setDisabled(true);
-
+        emailRequset.mutate(email as string);
         //http 요청 후 이미 가입한 이메일 에러
         // setRegister(true);
     };
