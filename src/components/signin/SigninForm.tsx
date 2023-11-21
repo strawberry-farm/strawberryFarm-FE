@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SigninForm() {
     const navigate = useNavigate();
-    const [email, setEmail] = useState<string | undefined>();
-    const [password, setPassword] = useState<string | undefined>();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [isInput, setIsInput] = useState<boolean>(true);
     const [match, setMatch] = useState<boolean>(true);
 

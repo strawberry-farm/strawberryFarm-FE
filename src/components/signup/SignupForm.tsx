@@ -11,13 +11,13 @@ import axios from 'axios';
 
 export default function SignupForm() {
     const [modal, setModal] = useRecoilState(modalState);
-    const [email, setEmail] = useState<string | undefined>();
-    const [password, setPassword] = useState<string | undefined>();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState<
         string | undefined
     >();
-    const [nickName, setNickname] = useState<string | undefined>();
-    const [code, setCode] = useState<string | undefined>();
+    const [nickName, setNickname] = useState('');
+    const [code, setCode] = useState('');
     const [empty, setEmpty] = useState<boolean>(false);
     const [register, setRegister] = useState<boolean>(false);
     const [authenticating, setAuthenticating] = useState<boolean>(false);
