@@ -4,6 +4,10 @@ export interface modalStateType {
     confirm: string;
     url: string;
 }
+export interface ComponentModalStateType {
+    isOpen: boolean;
+	content: JSX.Element | undefined;
+}
 export interface dropDayAndTimeType {
     day: string;
     time: string;

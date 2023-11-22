@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { modalStateType } from './atom.interface';
+import { ComponentModalStateType, modalStateType } from './atom.interface';
 
 export const modalState = atom<modalStateType>({
     key: 'modalState',
@@ -10,3 +10,11 @@ export const modalState = atom<modalStateType>({
         url: '',
     },
 });
+
+export const componentModalState = atom<ComponentModalStateType>({
+    key: 'componentModalState',
+    default: {
+        isOpen: false,
+		content: undefined,
+    }
+})
