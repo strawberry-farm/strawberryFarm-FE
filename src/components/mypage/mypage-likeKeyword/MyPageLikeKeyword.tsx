@@ -8,7 +8,7 @@ export default function MyPageLikeKeyword() {
 
     const onClickAddKeyword = () => {
         const keywordItem = {text: keyword, value: keyword};
-        const newKeywordList = keywordList ? [...keywordList, keywordItem] : [keywordItem]
+        const newKeywordList = keywordList ? [keywordItem, ...keywordList] : [keywordItem]
         setKeywordList(newKeywordList)
         setKeyword('')
     }
@@ -23,14 +23,14 @@ export default function MyPageLikeKeyword() {
                     defaultValue={keyword}
                     setValue={setKeyword}
                 />
-                <button type='button' className='mypage-likeKeyword-submit-button' onClick={onClickAddKeyword}>등록</button>
+                <button type='button' className='mypage-likeKeyword-submit-button button-basic' onClick={onClickAddKeyword}>등록</button>
             </div>
             <div className="mypage-likeKeyword-list">
             {keywordList?.map((keyword) => { 
                 return (
-                    <span className='mypage-likeKeyword-item button button-blue'>
+                    <span className='mypage-likeKeyword-item button-blue'>
                         {keyword.text}
-                        <button type='button'>
+                        <button type='button' className='mypage-likeKeyword-item-button'>
                             <img src="/icons/cancel.png" alt="" />
                         </button>
                     </span>

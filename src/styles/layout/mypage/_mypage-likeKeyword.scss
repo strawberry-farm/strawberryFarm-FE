@@ -1,0 +1,41 @@
+.mypage-likeKeyword {
+  .mypage-likeKeyword-form {
+    position: relative;
+    .common-input-wrapper {
+      height: 76px;
+    }
+  }
+  .mypage-likeKeyword-submit-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 68px;
+    height: 49px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+    transform: translateY(-50%);
+  }
+  .mypage-likeKeyword-list {
+
+    margin-top: 48px;
+  }
+  .mypage-likeKeyword-item {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: 48px;
+    margin-left: 16px;
+    padding: 0 8px 0 18px;
+    border-radius: 24px;
+    font-size: 20px;
+    font-weight: 700;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+  .mypage-likeKeyword-item-button {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+  }
+}

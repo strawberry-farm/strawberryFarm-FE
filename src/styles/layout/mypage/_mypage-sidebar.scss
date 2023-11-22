@@ -15,19 +15,19 @@
         color: $color-gray-600;
     }
     .mypage-sidebar-menu {
-        margin-top: 50px;
+        margin-top: 62px;
         font-size: 24px;
     }
     .mypage-sidebar-menu-item {
         &-divider {
-            margin-top: 12px;
-            padding-top: 12px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid $color-gray-300;
         }
     }
     .mypage-sidebar-menu-link {
         display: block;
-        padding: 10px 0;
+        padding: 12px 0;
         &.active {
             font-weight: 700;
         }

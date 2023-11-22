@@ -1,0 +1,24 @@
+.mypage-info {
+  .mypage-info-contents {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .mypage-info-profile {
+    width: 32%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mypage-info-form {
+    width: 68%;
+    margin-left: 25px;
+    > .common-input-wrapper {
+      margin-top: 24px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+}
