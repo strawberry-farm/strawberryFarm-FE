@@ -1,7 +1,7 @@
 import React from 'react';
-import useInput from '../../hooks/useInput';
 import { useRecoilState } from 'recoil';
 import { writeState } from '../../atom/writeState';
+import useInput from '../../hooks/useInput';
 const WriteApplication = (props: {
     setView: React.Dispatch<React.SetStateAction<number>>;
 }) => {
@@ -34,7 +34,10 @@ const WriteApplication = (props: {
                     모임에 참여하고 싶은 신청자에게 건넬 질문을 작성해 주세요.
                 </div>
                 <div className="ApplicationInpBox">
-                    <img src={'./icons/blueQuestion.webp'} alt={'?'} />
+                    <img
+                        src={'images/icons/question-fill-icon.png'}
+                        alt={'?'}
+                    />
                     <input
                         type="text"
                         placeholder="안녕하세요 자기소개 부탁드려요."
@@ -43,7 +46,10 @@ const WriteApplication = (props: {
                     />
                 </div>
                 <div className="ApplicationInpBox">
-                    <img src={'./icons/blueQuestion.webp'} alt={'?'} />
+                    <img
+                        src={'images/icons/question-fill-icon.png'}
+                        alt={'?'}
+                    />
                     <input
                         type="text"
                         placeholder="우리 모임에서 하게 될 운동의 숙련도가 궁금해요."
@@ -52,7 +58,10 @@ const WriteApplication = (props: {
                     />
                 </div>
                 <div className="ApplicationInpBox">
-                    <img src={'./icons/blueQuestion.webp'} alt={'?'} />
+                    <img
+                        src={'images/icons/question-fill-icon.png'}
+                        alt={'?'}
+                    />
                     <input
                         type="text"
                         placeholder="하고 싶은 말을 자유롭게 적어주세요!."
@@ -61,7 +70,10 @@ const WriteApplication = (props: {
                     />
                 </div>
                 <div className="ApplicationInpBox">
-                    <img src={'./icons/blueQuestion.webp'} alt={'?'} />
+                    <img
+                        src={'images/icons/question-fill-icon.png'}
+                        alt={'?'}
+                    />
                     <input
                         type="text"
                         placeholder="직접 입력."

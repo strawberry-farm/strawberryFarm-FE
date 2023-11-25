@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useInput from '../../hooks/useInput';
 
 export const Chat = () => {
@@ -6,7 +5,7 @@ export const Chat = () => {
     return (
         <div className="chatBox">
             <div className="chatBoxTitle">
-                <img src="./icons/soccer.png" /> 축구모임
+                <img src="images/icons/soccer.png" /> 축구모임
             </div>
             <div className="chatTextBox">
                 <div className="chat ch1">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ContentProps } from './Main.interface';
 import { Pagination } from '../@common/pagination/Pagination';
+import { ContentProps } from './Main.interface';
 
 const MainContents = (props: { data: ContentProps[] }) => {
     console.log(props.data);
@@ -32,7 +32,7 @@ const MainContents = (props: { data: ContentProps[] }) => {
                                 {/* <div className="contentsTag">{item.days}</div> */}
                                 <div className="imgBox">
                                     <img
-                                        src="/icons/heartSolid.png"
+                                        src="images/icons/like-soild.png"
                                         alt="즐겨찾기"
                                     />
                                 </div>
@@ -41,14 +41,14 @@ const MainContents = (props: { data: ContentProps[] }) => {
                                 <div className="dataTitle">{item.title}</div>
                                 <div className="dataLocation">
                                     <img
-                                        src="/icons/locationIcon.png"
+                                        src="images/icons/location-soild.png"
                                         alt="지역"
                                     />
                                     <span>{item.location}</span>
                                 </div>
                                 <div className="dataPeople">
                                     <img
-                                        src="/icons/twoPeople.png"
+                                        src="images/icons/two-people-solid.png"
                                         alt="인원"
                                     />
                                     <span>
