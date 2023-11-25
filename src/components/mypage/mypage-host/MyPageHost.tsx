@@ -4,7 +4,7 @@ import MyPageHostButton from './MyPageHostButton';
 export default function MyPageHost() {
     const listConfig = [
         {
-            thumbnail: '/icons/soccer.png',
+            thumbnail: '/images/thumbnail/soccer.png',
             category: '축구',
             title: '조기 축구 모집합니다~',
             location: '온천천시민공원',

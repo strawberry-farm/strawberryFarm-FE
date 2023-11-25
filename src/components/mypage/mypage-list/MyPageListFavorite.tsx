@@ -7,7 +7,7 @@ export default function MyPageListFavorite({
 }) {
     const [isFavorite, setIsFavorite] = useState(isFavorited);
 
-    const iconSrc = `/icons/${
+    const iconSrc = `/images/icons/${
         isFavorite ? 'like-fill-icon' : 'like-not-fill-icon'
     }.png`;
 

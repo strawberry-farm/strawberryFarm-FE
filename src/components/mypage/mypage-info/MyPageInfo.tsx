@@ -2,15 +2,15 @@ import { useState } from 'react';
 import Input from '../../@common/input/Input';
 
 export default function MyPageInfo() {
-    const [nickname, setNickname] = useState('')
-    const [statusMessage, setStatusMessage] = useState('')
+    const [nickname, setNickname] = useState('');
+    const [statusMessage, setStatusMessage] = useState('');
     return (
         <div className="mypage-info">
             <h2 className="mypage-title">회원정보 수정</h2>
             <div className="mypage-body">
                 <div className="mypage-info-contents">
                     <div className="mypage-info-profile">
-                        <img src="/icons/user-fill-icon.png" alt="" />
+                        <img src="/images/icons/user-solid.png" alt="" />
                     </div>
                     <div className="mypage-info-form">
                         <Input
@@ -30,9 +30,13 @@ export default function MyPageInfo() {
                         />
                     </div>
                 </div>
-                <button type="button" className='mypage-submit-button button-blue'>수정</button>
+                <button
+                    type="button"
+                    className="mypage-submit-button button-blue"
+                >
+                    수정
+                </button>
             </div>
         </div>
-
     );
 }

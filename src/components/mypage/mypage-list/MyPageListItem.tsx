@@ -18,7 +18,7 @@ export default function MyPageListItem<T>({
                 <div className="mypage-list-item-category">{category}</div>
                 <div className="mypage-list-item-title">{title}</div>
                 <div className="mypage-list-item-location">
-                    <img src="/icons/location-gray-icon.png" alt="" />
+                    <img src="/images/icons/location-line.png" alt="" />
                     {location}
                 </div>
                 <MyPageListFavorite isFavorited={isFavorited} />

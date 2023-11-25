@@ -7,9 +7,8 @@
     margin-top: 10px;
     cursor: pointer;
     img {
-        padding-right: 20px;
-        float: right;
-        background-image: '/icons/checkboxBin.png';
+        margin-left: 10px;
+        vertical-align: bottom;
     }
 }
 @mixin mainWrite {

@@ -1,13 +1,13 @@
+import { useState } from 'react';
 import { customUserImage } from '../../hooks/utils';
 import { DetailRightSideProps } from './Detail.interface';
 import DetailContentMap from './DetailContentMap';
-import { useState } from 'react';
 
 export default function DetailRightSide({ height }: DetailRightSideProps) {
-    const locationIcon = '/icons/location-icon.png';
-    const questionIcon = '/icons/question-icon.png';
-    const likeNotFillIcon = '/icons/like-not-fill-icon.png';
-    const likeFillIcon = '/icons/like-fill-icon.png';
+    const locationIcon = '/images/icons/location-solid.png';
+    const questionIcon = '/images/icons/question-line.png';
+    const likeNotFillIcon = '/images/icons/like-line.png';
+    const likeFillIcon = '/images/icons/like-solid.png';
     const [like, setLike] = useState<boolean>(false);
 
     const changeLikeState = () => {

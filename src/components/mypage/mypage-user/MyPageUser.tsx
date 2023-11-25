@@ -5,14 +5,14 @@ import MyPageUserFilter from './MyPageUserFilter';
 export default function MyPageUser() {
     const listConfig = [
         {
-            thumbnail: '/icons/soccer.png',
+            thumbnail: '/images/thumbnail/soccer.png',
             category: '축구',
             title: '조기 축구 모집합니다~',
             location: '온천천시민공원',
             isFavorited: false,
         },
         {
-            thumbnail: '/icons/basketball.png',
+            thumbnail: '/images/thumbnail/basketball.png',
             category: '농구',
             title: '조기 농구 모집합니다~',
             location: '안양천시민공원',
