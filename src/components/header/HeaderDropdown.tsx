@@ -48,7 +48,7 @@ export const UserDropDown = (props: {
                 <div className="alarmLayout">
                     <div className="alarmTitle">
                         <img
-                            src={'images/icons/alarm-solid.png'}
+                            src={'/images/icons/alarm-solid.png'}
                             alt="알림로고"
                         />
                         알림
@@ -58,7 +58,7 @@ export const UserDropDown = (props: {
                             <div className="text">
                                 내가 신청한 모임 참여 수락되었습니다.
                             </div>
-                            <img src="images/icons/cancel-line.png" />
+                            <img src="/images/icons/cancel-line.png" />
                         </div>
                     </div>
                     <div className="alarmLow">
@@ -66,7 +66,7 @@ export const UserDropDown = (props: {
                             <div className="text">
                                 내가 신청한 모임 참여 수락되었습니다.
                             </div>
-                            <img src="images/icons/cancel-line.png" />
+                            <img src="/images/icons/cancel-line.png" />
                         </div>
                     </div>
                 </div>

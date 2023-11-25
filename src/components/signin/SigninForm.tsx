@@ -54,7 +54,7 @@ export default function SigninForm() {
                 </button>
                 <img
                     className="signin-form-kakao-button"
-                    src="images/common/kakao-login.png"
+                    src="/images/common/kakao-login.png"
                 />
             </div>
             <div className="signin-form-sub-area">

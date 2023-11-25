@@ -168,7 +168,7 @@ export const Header = () => {
             <header className="headers">
                 <div className="headLayout">
                     <div className="headersLogo" onClick={() => navigator('/')}>
-                        <img src="images/icons/running-solid.png" alt="logo" />
+                        <img src="/images/icons/running-solid.png" alt="logo" />
                         <span>둘이서</span>
                     </div>
                     <div className="searchLayout">
@@ -206,7 +206,7 @@ export const Header = () => {
                             />
                             <div className="searchIconBtn">
                                 <img
-                                    src="images/icons/search-solid.png"
+                                    src="/images/icons/search-solid.png"
                                     alt="검색버튼"
                                 />
                             </div>
@@ -223,7 +223,7 @@ export const Header = () => {
                                     })
                                 }
                                 className="memu"
-                                src="images/icons/memu-solid.png"
+                                src="/images/icons/memu-solid.png"
                                 alt="사용자메뉴"
                             />
                         )}
@@ -238,7 +238,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="alarm"
-                                    src="images/icons/alarm-solid.png"
+                                    src="/images/icons/alarm-solid.png"
                                     alt="알림"
                                 />
                                 <img
@@ -249,7 +249,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="userIcon"
-                                    src="images/icons/user-line.png"
+                                    src="/images/icons/user-line.png"
                                     alt="유저메뉴"
                                 />
                             </>

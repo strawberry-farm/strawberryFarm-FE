@@ -66,7 +66,7 @@ const WritePicture = (props: {
                 <div className="fileBox">
                     <label htmlFor="file">
                         <img
-                            src={fileName || 'images/common/write-picture.png'}
+                            src={fileName || '/images/common/write-picture.png'}
                             alt="사진추가"
                         />
                     </label>

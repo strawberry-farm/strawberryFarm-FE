@@ -4,10 +4,10 @@ import { DetailRightSideProps } from './Detail.interface';
 import DetailContentMap from './DetailContentMap';
 
 export default function DetailRightSide({ height }: DetailRightSideProps) {
-    const locationIcon = 'images/icons/location-soild.png';
-    const questionIcon = 'images/icons/question-line.png';
-    const likeNotFillIcon = 'images/icons/like-line.png';
-    const likeFillIcon = 'images/icons/like-soild.png';
+    const locationIcon = '/images/icons/location-solid.png';
+    const questionIcon = '/images/icons/question-line.png';
+    const likeNotFillIcon = '/images/icons/like-line.png';
+    const likeFillIcon = '/images/icons/like-solid.png';
     const [like, setLike] = useState<boolean>(false);
 
     const changeLikeState = () => {

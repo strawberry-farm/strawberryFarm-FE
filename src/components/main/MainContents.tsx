@@ -32,7 +32,7 @@ const MainContents = (props: { data: ContentProps[] }) => {
                                 {/* <div className="contentsTag">{item.days}</div> */}
                                 <div className="imgBox">
                                     <img
-                                        src="images/icons/like-soild.png"
+                                        src="/images/icons/like-solid.png"
                                         alt="즐겨찾기"
                                     />
                                 </div>
@@ -41,14 +41,14 @@ const MainContents = (props: { data: ContentProps[] }) => {
                                 <div className="dataTitle">{item.title}</div>
                                 <div className="dataLocation">
                                     <img
-                                        src="images/icons/location-soild.png"
+                                        src="/images/icons/location-solid.png"
                                         alt="지역"
                                     />
                                     <span>{item.location}</span>
                                 </div>
                                 <div className="dataPeople">
                                     <img
-                                        src="images/icons/two-people-solid.png"
+                                        src="/images/icons/two-people-solid.png"
                                         alt="인원"
                                     />
                                     <span>

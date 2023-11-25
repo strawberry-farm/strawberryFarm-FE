@@ -5,7 +5,7 @@ export const Chat = () => {
     return (
         <div className="chatBox">
             <div className="chatBoxTitle">
-                <img src="images/icons/soccer.png" /> 축구모임
+                <img src="/images/thumbnail/soccer.png" /> 축구모임
             </div>
             <div className="chatTextBox">
                 <div className="chat ch1">

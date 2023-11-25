@@ -22,14 +22,14 @@ export const Silde = () => {
         // prevArrow: <PrevArrow />,
     };
     const silderData: imgProps[] = [
-        { id: 1, name: '축구', imgSrc: 'images/thumbnail/soccer.png' },
-        { id: 2, name: '산책', imgSrc: 'images/thumbnail/walk.png' },
-        { id: 3, name: '요가', imgSrc: 'images/thumbnail/yoga.png' },
-        { id: 4, name: '필라테스', imgSrc: 'images/thumbnail/pilates.png' },
-        { id: 5, name: '헬스', imgSrc: 'images/thumbnail/health.png' },
-        { id: 6, name: '자전거', imgSrc: 'images/thumbnail/bicycle.png' },
-        { id: 7, name: '농구', imgSrc: 'images/thumbnail/basketball.png' },
-        { id: 8, name: '배드민턴', imgSrc: 'images/thumbnail/badminton.png' },
+        { id: 1, name: '축구', imgSrc: '/images/thumbnail/soccer.png' },
+        { id: 2, name: '산책', imgSrc: '/images/thumbnail/walk.png' },
+        { id: 3, name: '요가', imgSrc: '/images/thumbnail/yoga.png' },
+        { id: 4, name: '필라테스', imgSrc: '/images/thumbnail/pilates.png' },
+        { id: 5, name: '헬스', imgSrc: '/images/thumbnail/health.png' },
+        { id: 6, name: '자전거', imgSrc: '/images/thumbnail/bicycle.png' },
+        { id: 7, name: '농구', imgSrc: '/images/thumbnail/basketball.png' },
+        { id: 8, name: '배드민턴', imgSrc: '/images/thumbnail/badminton.png' },
     ];
 
     return (

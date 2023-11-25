@@ -35,7 +35,7 @@ const WriteApplication = (props: {
                 </div>
                 <div className="ApplicationInpBox">
                     <img
-                        src={'images/icons/question-fill-icon.png'}
+                        src={'/images/icons/question-fill-icon.png'}
                         alt={'?'}
                     />
                     <input
@@ -47,7 +47,7 @@ const WriteApplication = (props: {
                 </div>
                 <div className="ApplicationInpBox">
                     <img
-                        src={'images/icons/question-fill-icon.png'}
+                        src={'/images/icons/question-fill-icon.png'}
                         alt={'?'}
                     />
                     <input
@@ -59,7 +59,7 @@ const WriteApplication = (props: {
                 </div>
                 <div className="ApplicationInpBox">
                     <img
-                        src={'images/icons/question-fill-icon.png'}
+                        src={'/images/icons/question-fill-icon.png'}
                         alt={'?'}
                     />
                     <input
@@ -71,7 +71,7 @@ const WriteApplication = (props: {
                 </div>
                 <div className="ApplicationInpBox">
                     <img
-                        src={'images/icons/question-fill-icon.png'}
+                        src={'/images/icons/question-fill-icon.png'}
                         alt={'?'}
                     />
                     <input
