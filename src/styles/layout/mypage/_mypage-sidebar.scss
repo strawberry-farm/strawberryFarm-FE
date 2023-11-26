@@ -1,0 +1,35 @@
+.mypage-sidebar {
+    .mypage-sidebar-profile {
+        display: flex;
+        align-items: center;
+    }
+    .mypage-sidebar-profile-image {
+        margin-right: 10px;
+    }
+    .mypage-sidebar-profile-name {
+        font-size: 20px;
+    }
+    .mypage-sidebar-profile-email {
+        margin-top: 4px;
+        font-size: 18px;
+        color: $color-gray-600;
+    }
+    .mypage-sidebar-menu {
+        margin-top: 62px;
+        font-size: 24px;
+    }
+    .mypage-sidebar-menu-item {
+        &-divider {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid $color-gray-300;
+        }
+    }
+    .mypage-sidebar-menu-link {
+        display: block;
+        padding: 12px 0;
+        &.active {
+            font-weight: 700;
+        }
+    }
+}

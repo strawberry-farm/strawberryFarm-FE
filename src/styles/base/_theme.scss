@@ -1,0 +1,23 @@
+.color-gray-600 {
+    color: $color-gray-600;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 32px;
+    margin: 0 8px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    &-basic {
+        background-color: #fff;
+        color: $color-blue-dark;
+    }
+    &-blue {
+        background-color: $color-blue-dark;
+        color: #fff;
+    }
+}

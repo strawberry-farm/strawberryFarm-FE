@@ -1,6 +1,7 @@
 @import './abstracts/variables';
 @import './base/base';
 @import './base/reset';
+@import './base/theme';
 
 // common
 @import './layout/@common/input';
@@ -30,3 +31,6 @@
 @import './layout/detail/detail';
 @import './layout/main/main';
 @import './layout/room/room';
+
+//mypage
+@import './layout/mypage/mypage';

@@ -2,17 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
+import { demmy } from '../../constant/region';
 import { useFocus } from '../../hooks/useFocus';
-import {
-    LocalTimeProps,
-    RegionProps,
-    SearchIsProps,
-    Situation,
-} from './Header.interface';
+import { LocalTimeProps, SearchIsProps, Situation } from './Header.interface';
 import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';
-import { SearchTag } from './HeaderSearchTag';
 
 const demmy: RegionProps[] = [
     {
@@ -205,6 +200,10 @@ export const Header = () => {
                                 ref={ref}
                             />
                             <div className="searchIconBtn">
+                                <img
+                                    src="/images/icons/search-solid.png"
+                                    alt="검색버튼"
+                                />
                                 <img
                                     src="/images/icons/search-solid.png"
                                     alt="검색버튼"
