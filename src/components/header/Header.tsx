@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
+import { useFocus } from '../../hooks/useFocus';
 import {
     LocalTimeProps,
     RegionProps,
     SearchIsProps,
     Situation,
 } from './Header.interface';
-import { SearchTag } from './HeaderSearchTag';
-import { useNavigate } from 'react-router-dom';
-import { useFocus } from '../../hooks/useFocus';
 import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';
-import { useRecoilValue } from 'recoil';
-import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
+import { SearchTag } from './HeaderSearchTag';
 
 const demmy: RegionProps[] = [
     {
@@ -168,7 +168,7 @@ export const Header = () => {
             <header className="headers">
                 <div className="headLayout">
                     <div className="headersLogo" onClick={() => navigator('/')}>
-                        <img src="/icons/personRunning.png" alt="logo" />
+                        <img src="/images/icons/running-solid.png" alt="logo" />
                         <span>둘이서</span>
                     </div>
                     <div className="searchLayout">
@@ -205,7 +205,10 @@ export const Header = () => {
                                 ref={ref}
                             />
                             <div className="searchIconBtn">
-                                <img src="/icons/search.png" alt="검색버튼" />
+                                <img
+                                    src="/images/icons/search-solid.png"
+                                    alt="검색버튼"
+                                />
                             </div>
                         </div>
                     </div>
@@ -220,7 +223,7 @@ export const Header = () => {
                                     })
                                 }
                                 className="memu"
-                                src="/icons/memu.png"
+                                src="/images/icons/memu-solid.png"
                                 alt="사용자메뉴"
                             />
                         )}
@@ -235,7 +238,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="alarm"
-                                    src="/icons/alarm.png"
+                                    src="/images/icons/alarm-solid.png"
                                     alt="알림"
                                 />
                                 <img
@@ -246,7 +249,7 @@ export const Header = () => {
                                         })
                                     }
                                     className="userIcon"
-                                    src="/icons/userIcon.png"
+                                    src="/images/icons/user-line.png"
                                     alt="유저메뉴"
                                 />
                             </>

@@ -64,9 +64,9 @@ export const WriteMemu = (props: {
                         >
                             {item.title}
                             {idx === props.view ? (
-                                <img src={'/icons/checkboxFull.png'} />
+                                <img src={'/images/icons/checkbox-solid.png'} />
                             ) : (
-                                <img src={'/icons/checkboxBin.png'} />
+                                <img src={'/images/icons/checkbox-line.png'} />
                             )}
                         </div>
                     );
