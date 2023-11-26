@@ -1,0 +1,61 @@
+.mypage-host {
+}
+.mypage-host-modal {
+    .mypage-host-modal-title {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .mypage-host-modal-list {
+    }
+    .mypage-host-modal-item {
+        padding: 16px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+    }
+    .mypage-host-modal-application {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 500;
+        .mypage-host-modal-icon {
+            width: 32px;
+        }
+    }
+    .mypage-host-modal-application-title {
+        flex: 1;
+    }
+    .mypage-host-modal-application-button {
+        margin-left: 8px;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+    .mypage-host-modal-detail {
+        padding: 8px 3px 0;
+    }
+    .mypage-host-modal-question {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 16px;
+        border: 1px solid #dbdbdb;
+        color: #5b5b5b;
+        .mypage-host-modal-icon {
+            width: 28px;
+        }
+    }
+    .mypage-host-modal-answer {
+        display: flex;
+        align-items: center;
+        padding: 16px 12px;
+        .mypage-host-modal-icon {
+            width: 26px;
+        }
+    }
+    .mypage-host-modal-icon {
+        margin-right: 10px;
+        img {
+            width: 100%;
+        }
+    }
+}

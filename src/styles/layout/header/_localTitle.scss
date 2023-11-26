@@ -55,7 +55,7 @@
 
     .onDay {
         @include selectTag;
-        background: #1d5d9b;
+        background: $color-blue-dark;
         color: #ffffff;
     }
 }

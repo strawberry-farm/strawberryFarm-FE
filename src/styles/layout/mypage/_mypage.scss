@@ -4,6 +4,7 @@
 @import './mypage-info';
 @import './_mypage-likeLocation';
 @import './_mypage-likeKeyword';
+@import './_mypage-host';
 
 .mypage {
     display: flex;
@@ -41,6 +42,5 @@
         border-radius: 5px;
         font-size: 20px;
         font-weight: 800;
-    
     }
 }
