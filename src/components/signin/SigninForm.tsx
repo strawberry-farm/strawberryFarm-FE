@@ -1,12 +1,12 @@
-import Input from '../@common/input/Input';
 import { useState } from 'react';
-import SigninRegex from './SigninRegex';
 import { useNavigate } from 'react-router-dom';
+import Input from '../@common/input/Input';
+import SigninRegex from './SigninRegex';
 
 export default function SigninForm() {
     const navigate = useNavigate();
-    const [email, setEmail] = useState<string | undefined>();
-    const [password, setPassword] = useState<string | undefined>();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [isInput, setIsInput] = useState<boolean>(true);
     const [match, setMatch] = useState<boolean>(true);
 
@@ -54,7 +54,7 @@ export default function SigninForm() {
                 </button>
                 <img
                     className="signin-form-kakao-button"
-                    src="../../../public/icons/kakao-login.png"
+                    src="/images/common/kakao-login.png"
                 />
             </div>
             <div className="signin-form-sub-area">

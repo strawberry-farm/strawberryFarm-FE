@@ -1,0 +1,150 @@
+@mixin textBoxAll {
+    position: relative;
+    display: inline-block;
+    max-width: calc(100% - 70px);
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 13px;
+    border-radius: 10px;
+    ::before {
+        position: absolute;
+        display: block;
+        top: 0;
+        font-size: 1.5rem;
+    }
+}
+
+.room {
+    width: 100%;
+    min-height: 80vh;
+    .roomLayout {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .roomBox {
+        display: flex;
+        .roomMemu {
+            width: 25%;
+            min-height: 450px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+            .roomNum {
+                border-bottom: 1px solid #f2f2f2;
+                // background: #f1f1f1;
+                width: 100%;
+                height: 70px;
+                display: flex;
+                .roomNumInfoBox {
+                    padding: 12px 0;
+                    display: block;
+                    .title {
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin-bottom: 4px;
+                    }
+                    .content {
+                        color: gray;
+                    }
+                }
+                img {
+                    margin: 5px 5px 0px 5px;
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 4px;
+                }
+            }
+        }
+        .chatBox {
+            margin-left: 50px;
+            border-radius: 8px;
+            width: 60%;
+            min-height: 450px;
+            background: #fff;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+            .chatBoxTitle {
+                padding: 5px;
+                color: #000;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: normal;
+                border-bottom: 1px solid #dcdcdc;
+                img {
+                    position: relative;
+                    top: 4px;
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            .chatTextBox {
+                height: 75%;
+                overflow: scroll;
+                .chat {
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 20px;
+                    .icon {
+                        position: relative;
+                        overflow: hidden;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background-color: #eee;
+                    }
+                }
+                .ch1 {
+                    .nick {
+                        color: #dcdcdc;
+                        text-align: start;
+                    }
+                    .textbox {
+                        @include textBoxAll;
+                    }
+                }
+                .ch2 {
+                    flex-direction: row-reverse;
+                    .nick {
+                        color: #dcdcdc;
+                        text-align: end;
+                        flex-direction: row-reverse;
+                    }
+                    .textbox {
+                        @include textBoxAll;
+                    }
+                }
+            }
+            .inputTextBox {
+                width: 95%;
+                height: 13%;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                margin: 0 auto;
+                input {
+                    width: 85%;
+                    height: 100%;
+                    padding: 5px 10px;
+                }
+                button {
+                    cursor: pointer;
+                    width: 11%;
+                    margin-left: 10px;
+                    padding: 10px;
+                    color: #fff;
+                    background-color: $color-blue-dark;
+                    border-radius: 10px;
+                    &:active {
+                        background-color: #3493f1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.roomTitle {
+    margin-top: 100px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}

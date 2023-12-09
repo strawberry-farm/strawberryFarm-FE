@@ -1,12 +1,13 @@
 .dropdownLayout {
     width: 100%;
     height: auto;
-
+    z-index: 100;
     display: flex;
     justify-content: right;
 }
 .dropdownLow {
     position: absolute;
+    z-index: 100;
     top: 110px;
     text-align: start;
     border: 1px solid #e4e4e4;
@@ -25,7 +26,7 @@
     font-weight: 300;
     line-height: normal;
     &:hover {
-        color: #1d5d9b;
+        color: $color-blue-dark;
     }
     &:nth-child(4) {
         border-top: 1px #e4e4e4 solid;

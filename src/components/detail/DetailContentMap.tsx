@@ -10,7 +10,10 @@ export default function DetailContentMap({
     useEffect(() => {
         const container = document.getElementById('customMap');
         const options = {
-            center: new kakao.maps.LatLng(latitude, longitude),
+            center: new kakao.maps.LatLng(
+                (latitude = 39.4),
+                (longitude = 39.4),
+            ),
             level: 3,
         };
         const map = new kakao.maps.Map(container, options);

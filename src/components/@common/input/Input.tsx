@@ -3,13 +3,14 @@ import { InputProps } from './Input.interface';
 export default function Input({
     placeholder,
     type,
+    defaultValue,
     setValue,
     disabled,
 }: InputProps) {
     const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value);
+        if(setValue) setValue(e.target.value);
     };
-
+console.log('defaultValue', defaultValue);
     return (
         <div className="common-input-wrapper">
             <input
@@ -18,6 +19,7 @@ export default function Input({
                 placeholder={placeholder}
                 onChange={onChangeValue}
                 disabled={disabled}
+                value={defaultValue}
             />
         </div>
     );

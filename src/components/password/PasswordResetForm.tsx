@@ -9,12 +9,10 @@ import CodeConfirm from '../@common/codeConfirm/CodeConfirm';
 
 export default function PasswordResetForm() {
     const [modal, setModal] = useRecoilState(modalState);
-    const [email, setEmail] = useState<string | undefined>();
-    const [password, setPassword] = useState<string | undefined>();
-    const [passwordConfirm, setPasswordConfirm] = useState<
-        string | undefined
-    >();
-    const [code, setCode] = useState<string | undefined>();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [code, setCode] = useState('');
     const [empty, setEmpty] = useState<boolean>(false);
     const [authenticating, setAuthenticating] = useState<boolean>(false);
     const [disabled, setDisabled] = useState<boolean>(false);

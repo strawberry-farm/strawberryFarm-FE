@@ -32,6 +32,7 @@
     background-color: #ffffff;
     position: absolute;
     left: 580px;
+    z-index: 100;
     top: 120px;
     width: 360px;
     height: 250px;
@@ -54,7 +55,7 @@
 
     .onDay {
         @include selectTag;
-        background: #1d5d9b;
+        background: $color-blue-dark;
         color: #ffffff;
     }
 }

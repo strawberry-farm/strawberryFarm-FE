@@ -1,18 +1,22 @@
 import React, { useCallback } from 'react';
 import { LocalTimeProps } from './Header.interface';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { dropDayAndTimeState } from '../../atom/dropStare';
 
 export const HeaderLocalAndTitle = (props: {
     dayTitle: LocalTimeProps;
     setDayTitle: React.Dispatch<React.SetStateAction<LocalTimeProps>>;
 }) => {
     const dayTitle = props.dayTitle;
+    const [dayAndTime, setDayAndTime] = useRecoilState(dropDayAndTimeState);
 
     const dayOnClickHandler = useCallback(
         (e: React.MouseEvent) => {
             const target = e.target as HTMLDivElement;
             props.setDayTitle({ ...dayTitle, day: target.innerText });
+            setDayAndTime({ ...dayAndTime, day: target.innerText });
         },
-        [dayTitle, props],
+        [dayAndTime, dayTitle, props, setDayAndTime],
     );
 
     const dateOnClickHander = useCallback(
@@ -20,8 +24,9 @@ export const HeaderLocalAndTitle = (props: {
             const target = e.target as HTMLDivElement;
             if (target.innerText.includes('시간대 선택')) return;
             props.setDayTitle({ ...dayTitle, time: target.innerText });
+            setDayAndTime({ ...dayAndTime, time: target.innerText });
         },
-        [dayTitle, props],
+        [dayAndTime, dayTitle, props, setDayAndTime],
     );
 
     return (
