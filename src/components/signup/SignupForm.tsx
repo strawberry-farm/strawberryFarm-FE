@@ -13,9 +13,7 @@ export default function SignupForm() {
     const [modal, setModal] = useRecoilState(modalState);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [passwordConfirm, setPasswordConfirm] = useState<
-        string | undefined
-    >();
+    const [passwordConfirm, setPasswordConfirm] = useState<string>();
     const [nickName, setNickname] = useState('');
     const [code, setCode] = useState('');
     const [empty, setEmpty] = useState<boolean>(false);
@@ -32,6 +30,7 @@ export default function SignupForm() {
                 '/auth/email-request',
                 {
                     email: email,
+                    type: 'SIGNUP',
                 },
                 {
                     headers: {
@@ -44,7 +43,7 @@ export default function SignupForm() {
             )
             .then((res: any) => {
                 console.log(res);
-                if (res.message === 'Success') {
+                if (res.data.message === 'Success') {
                     // http 요청 후 인증 성공
                     setModal({
                         ...modal,
@@ -57,6 +56,36 @@ export default function SignupForm() {
                     setDisabled(true);
                 }
             }),
+    );
+    const signUp = useMutation(
+        (body: { email: string; password: string; nickName: string }) =>
+            axios
+                .post(
+                    '/auth/signup',
+                    {
+                        email: body.email,
+                        password: body.password,
+                        nickName: body.nickName,
+                    },
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*',
+                            'Access-Control-Allow-Credentials': 'true',
+                        },
+                        withCredentials: false, // 쿠키 cors 통신 설정
+                    },
+                )
+                .then((res: any) => {
+                    if (res.message === 'Success') {
+                        setModal({
+                            content: '회원가입이 완료되었습니다',
+                            confirm: '로그인하러 가기',
+                            modalOpen: true,
+                            url: '/signin',
+                        });
+                    }
+                }),
     );
 
     const sendAuthenticationCode = () => {
@@ -81,6 +110,7 @@ export default function SignupForm() {
     };
 
     const completeSignup = () => {
+        signUp.mutate({ email, password, nickName });
         setModal({
             content: '회원가입이 완료되었습니다',
             confirm: '로그인하러 가기',

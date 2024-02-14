@@ -2,12 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
-import { demmy } from '../../constant/region';
+
 import { useFocus } from '../../hooks/useFocus';
-import { LocalTimeProps, SearchIsProps, Situation } from './Header.interface';
+import {
+    LocalTimeProps,
+    RegionProps,
+    SearchIsProps,
+    Situation,
+} from './Header.interface';
 import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';
+import { SearchTag } from './HeaderSearchTag';
 
 const demmy: RegionProps[] = [
     {
@@ -156,8 +162,10 @@ export const Header = () => {
             }
         }
     };
+    const jwt = localStorage.getItem('jwt')
+        ? localStorage.getItem('jwt')
+        : null;
 
-    const jwt = false; // 임시
     return (
         <>
             <header className="headers">

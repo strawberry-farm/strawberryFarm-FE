@@ -20,6 +20,9 @@ const getUserKey = () => {
     const keyword = 'keyword';
     const groups = 'groups';
     return {
+        user: () => {
+            return [endponint];
+        },
         userId: (userId: number) => {
             return [endponint, userId.toString()];
         },

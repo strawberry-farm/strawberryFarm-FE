@@ -2,6 +2,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { imgProps } from './silde.interface';
+import { queryKey } from '../../../queries/query-key';
+import axios from '../../../Lib/Axios/index';
+import { useQuery } from '@tanstack/react-query';
 export const Silde = () => {
     const settings = {
         slide: 'div', // 태그 div로 보이기
@@ -21,29 +24,23 @@ export const Silde = () => {
         // nextArrow: <NextArrow />,
         // prevArrow: <PrevArrow />,
     };
-    const silderData: imgProps[] = [
-        { id: 1, name: '축구', imgSrc: '/images/thumbnail/soccer.png' },
-        { id: 2, name: '산책', imgSrc: '/images/thumbnail/walk.png' },
-        { id: 3, name: '요가', imgSrc: '/images/thumbnail/yoga.png' },
-        { id: 4, name: '필라테스', imgSrc: '/images/thumbnail/pilates.png' },
-        { id: 5, name: '헬스', imgSrc: '/images/thumbnail/health.png' },
-        { id: 6, name: '자전거', imgSrc: '/images/thumbnail/bicycle.png' },
-        { id: 7, name: '농구', imgSrc: '/images/thumbnail/basketball.png' },
-        { id: 8, name: '배드민턴', imgSrc: '/images/thumbnail/badminton.png' },
-    ];
 
+    // const { data } = useQuery({
+    //     queryKey: queryKey.field.all,
+    //     queryFn: async () => axios.get('/field').then((res) => res.data),
+    // });
     return (
         <div className="silderLayout">
-            <Slider {...settings}>
-                {silderData.map((item: imgProps) => {
+            {/* <Slider {...settings}>
+                {data.data.map((item: imgProps) => {
                     return (
-                        <div className="silderBox" key={item.id}>
-                            <img src={item.imgSrc} alt="사진" />
-                            <div>{item.name}</div>
+                        <div className="silderBox" key={item.fieldId}>
+                            <img src={item.image} alt="사진" />
+                            <div>{item.fieldName}</div>
                         </div>
                     );
                 })}
-            </Slider>
+            </Slider> */}
         </div>
     );
 };
