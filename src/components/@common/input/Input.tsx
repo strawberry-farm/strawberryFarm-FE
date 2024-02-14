@@ -8,9 +8,8 @@ export default function Input({
     disabled,
 }: InputProps) {
     const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if(setValue) setValue(e.target.value);
+        if (setValue) setValue(e.target.value);
     };
-console.log('defaultValue', defaultValue);
     return (
         <div className="common-input-wrapper">
             <input

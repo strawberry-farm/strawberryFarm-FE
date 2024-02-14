@@ -19,7 +19,6 @@ export const WritePerson = (props: {
         x: 0,
         y: 0,
     });
-    console.log(addrData);
 
     const onNextOnclick = () => {
         setWtite({
@@ -56,7 +55,6 @@ export const WritePerson = (props: {
                                         config,
                                     )
                                     .then((result: any) => {
-                                        console.log(result);
                                         setAddrData({
                                             bcode: e.bcode,
                                             addr: addr.address,

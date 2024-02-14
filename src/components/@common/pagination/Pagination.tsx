@@ -20,7 +20,6 @@ export const Pagination = (props: PaginationProps) => {
         }
         props.setPage(props.page - 1);
     };
-    console.log(number, 'number', props.page);
 
     return (
         <>

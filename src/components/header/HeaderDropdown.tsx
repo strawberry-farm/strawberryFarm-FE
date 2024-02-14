@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Situation } from './Header.interface';
 
 export const UserDropDown = (props: {
-    jwt: boolean;
+    jwt: string | null;
     situation: Situation;
     setSituation: React.Dispatch<React.SetStateAction<Situation>>;
 }) => {
@@ -12,11 +12,37 @@ export const UserDropDown = (props: {
             <>
                 <div className="dropdownLayout">
                     <div className="dropdownLow">
+                        <div
+                            className="dropdown"
+                            onClick={() => {
+                                props.setSituation({
+                                    user: false,
+                                    alarm: false,
+                                    guest: false,
+                                });
+                                navigator('/mypage/info');
+                            }}
+                        >
+                            내정보
+                        </div>
                         <div className="dropdown">내모임</div>
                         <div className="dropdown">내채팅방</div>
                         <div className="dropdown">위시리스트</div>
                         <div className="dropdown">운영중인 모임</div>
-                        <div className="dropdown">로그아웃</div>
+                        <div
+                            className="dropdown"
+                            onClick={() => {
+                                localStorage.removeItem('jwt');
+                                props.setSituation({
+                                    user: false,
+                                    alarm: false,
+                                    guest: false,
+                                });
+                                navigator('/');
+                            }}
+                        >
+                            로그아웃
+                        </div>
                     </div>
                 </div>
             </>

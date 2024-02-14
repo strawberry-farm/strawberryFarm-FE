@@ -1,4 +1,3 @@
-import React from 'react';
 import { Silde } from '../@common/slide/silde';
 import { ContentProps } from './Main.interface';
 import MainContents from './MainContents';

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../@common/input/Input';
 import SigninRegex from './SigninRegex';
+import { useMutation } from '@tanstack/react-query';
+import axios from '../../Lib/Axios';
 
 export default function SigninForm() {
     const navigate = useNavigate();
@@ -10,16 +12,50 @@ export default function SigninForm() {
     const [isInput, setIsInput] = useState<boolean>(true);
     const [match, setMatch] = useState<boolean>(true);
 
+    const loginBtn = useMutation((body: { email: string; password: string }) =>
+        axios
+            .post(
+                '/auth/login',
+                {
+                    email: body.email,
+                    password: body.password,
+                    expiredTime: 2000,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Credentials': 'true',
+                    },
+                    withCredentials: false, // 쿠키 cors 통신 설정
+                },
+            )
+            .then((res: any) => {
+                console.log(res, 'resss');
+                if (res.message === 'Success') {
+                    //token 쿠키에 저장
+                    
+                    const localStorageJwt: any = JSON.stringify(
+                        res.data.accessToken,
+                    );
+                    localStorage.setItem('jwt', localStorageJwt);
+                    // navigate('/');
+                } else {
+                    setMatch(false);
+                }
+            }),
+    );
+
     const goToLogin = () => {
         !email || (!password && setIsInput(false));
-        setMatch(false);
+        console.log(email, password);
+
+        loginBtn.mutate({ email, password });
     };
 
     const goToPage = (url: string) => {
         navigate(url);
     };
-
-    console.log(email, password);
 
     return (
         <div className="signin-form">

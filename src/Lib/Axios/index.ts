@@ -4,6 +4,20 @@ const baseURL = 'https://strawberryfarm.shop';
 const axiosInstance = axios.create({ baseURL });
 
 axiosInstance.interceptors.request.use((config) => {
+    const localUser = localStorage.getItem('jwt');
+    
+    const token = localUser ? localUser : null;
+    console.log(token,"씨발");
+    
+    if (token && token.length > 0) {
+        const isString = `Bearer :`+token;
+        const not = isString.replace('"',"");
+        const notTwo= not.replace('"',"");
+        config.headers.Authorization = notTwo;
+        // config.headers.Authorization.replace(/\/g, " ");
+    }
+    console.log(config);
+    
     return config;
 });
 axiosInstance.interceptors.response.use(

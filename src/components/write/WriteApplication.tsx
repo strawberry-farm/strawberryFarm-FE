@@ -22,7 +22,6 @@ const WriteApplication = (props: {
             },
         });
     };
-    console.log(write);
 
     return (
         <div className="writeTitleLayout">

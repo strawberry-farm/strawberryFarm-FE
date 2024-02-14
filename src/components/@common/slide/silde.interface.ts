@@ -1,5 +1,5 @@
 export interface imgProps {
-    id: number;
-    name: string;
-    imgSrc: string;
+    fieldId: number;
+    fieldName: string;
+    image: string;
 }
