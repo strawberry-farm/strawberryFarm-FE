@@ -1,13 +1,19 @@
 import axios from 'axios';
 
 const baseURL = 'https://strawberryfarm.shop';
-const axiosInstance = axios.create({ baseURL });
+
+const axiosInstance= axios.create({
+    baseURL: baseURL,
+
+    headers: {
+      'Access-Control-Allow-Origin': baseURL,
+    },
+  });
 
 axiosInstance.interceptors.request.use((config) => {
     const localUser = localStorage.getItem('jwt');
     
     const token = localUser ? localUser : null;
-    console.log(token,"씨발");
     
     if (token && token.length > 0) {
         const isString = `Bearer :`+token;

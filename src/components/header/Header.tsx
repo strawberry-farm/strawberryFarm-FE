@@ -14,6 +14,9 @@ import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';
 import { SearchTag } from './HeaderSearchTag';
+import { queryKey } from '../../queries/query-key';
+import { useQuery } from '@tanstack/react-query';
+import axios from '../../Lib/Axios';
 
 const demmy: RegionProps[] = [
     {
@@ -118,6 +121,13 @@ export const Header = () => {
         dayAndTime: 'basic',
         localAndTitle: 'basic',
     });
+    const { data } = useQuery({
+        queryKey: queryKey.contents.search,
+        queryFn: async () =>
+            axios.get('/contents/adminArea').then((res) => console.log(res)),
+    });
+    console.log(data, 'data');
+
     useEffect(() => {
         // 검색창 백그라운드 컬러 변경
         if (
