@@ -18,86 +18,86 @@ import { queryKey } from '../../queries/query-key';
 import { useQuery } from '@tanstack/react-query';
 import axios from '../../Lib/Axios';
 
-const demmy: RegionProps[] = [
-    {
-        sidoName: '서울',
-        sigungu: [
-            {
-                sigunguName: '서울 전체',
-                bCode: 11000,
-            },
-            {
-                sigunguName: '종로구',
-                bCode: 11110,
-            },
-        ],
-    },
-    {
-        sidoName: '경기',
-        sigungu: [
-            {
-                sigunguName: '경기 전체',
-                bCode: 4100000000,
-            },
-            {
-                sigunguName: '성남시',
-                bCode: 4130000000,
-            },
-        ],
-    },
-    {
-        sidoName: '인천',
-        sigungu: [
-            {
-                sigunguName: '경기 전체',
-                bCode: 4100000000,
-            },
-            {
-                sigunguName: '성남시',
-                bCode: 4130000000,
-            },
-        ],
-    },
-    {
-        sidoName: '대전',
-        sigungu: [
-            {
-                sigunguName: '경기 전체',
-                bCode: 4100000000,
-            },
-            {
-                sigunguName: '성남시',
-                bCode: 4130000000,
-            },
-        ],
-    },
-    {
-        sidoName: '충남',
-        sigungu: [
-            {
-                sigunguName: '경기 전체',
-                bCode: 4100000000,
-            },
-            {
-                sigunguName: '성남시',
-                bCode: 4130000000,
-            },
-        ],
-    },
-    {
-        sidoName: '세종',
-        sigungu: [
-            {
-                sigunguName: '경기 전체',
-                bCode: 4100000000,
-            },
-            {
-                sigunguName: '성남시',
-                bCode: 4130000000,
-            },
-        ],
-    },
-];
+// const demmy: RegionProps[] = [
+//     {
+//         sidoName: '서울',
+//         sigungu: [
+//             {
+//                 sigunguName: '서울 전체',
+//                 bCode: 11000,
+//             },
+//             {
+//                 sigunguName: '종로구',
+//                 bCode: 11110,
+//             },
+//         ],
+//     },
+//     {
+//         sidoName: '경기',
+//         sigungu: [
+//             {
+//                 sigunguName: '경기 전체',
+//                 bCode: 4100000000,
+//             },
+//             {
+//                 sigunguName: '성남시',
+//                 bCode: 4130000000,
+//             },
+//         ],
+//     },
+//     {
+//         sidoName: '인천',
+//         sigungu: [
+//             {
+//                 sigunguName: '경기 전체',
+//                 bCode: 4100000000,
+//             },
+//             {
+//                 sigunguName: '성남시',
+//                 bCode: 4130000000,
+//             },
+//         ],
+//     },
+//     {
+//         sidoName: '대전',
+//         sigungu: [
+//             {
+//                 sigunguName: '경기 전체',
+//                 bCode: 4100000000,
+//             },
+//             {
+//                 sigunguName: '성남시',
+//                 bCode: 4130000000,
+//             },
+//         ],
+//     },
+//     {
+//         sidoName: '충남',
+//         sigungu: [
+//             {
+//                 sigunguName: '경기 전체',
+//                 bCode: 4100000000,
+//             },
+//             {
+//                 sigunguName: '성남시',
+//                 bCode: 4130000000,
+//             },
+//         ],
+//     },
+//     {
+//         sidoName: '세종',
+//         sigungu: [
+//             {
+//                 sigunguName: '경기 전체',
+//                 bCode: 4100000000,
+//             },
+//             {
+//                 sigunguName: '성남시',
+//                 bCode: 4130000000,
+//             },
+//         ],
+//     },
+// ];
 
 export const Header = () => {
     const searchRef = useRef<HTMLDivElement>(null);
@@ -124,9 +124,9 @@ export const Header = () => {
     const { data } = useQuery({
         queryKey: queryKey.contents.search,
         queryFn: async () =>
-            axios.get('/contents/adminArea').then((res) => console.log(res)),
+            axios.get('/contents/adminArea').then((res) => res.data),
     });
-    console.log(data, 'data');
+    console.log(data);
 
     useEffect(() => {
         // 검색창 백그라운드 컬러 변경
@@ -175,6 +175,7 @@ export const Header = () => {
     const jwt = localStorage.getItem('jwt')
         ? localStorage.getItem('jwt')
         : null;
+    console.log(isSearch.region);
 
     return (
         <>
@@ -218,10 +219,6 @@ export const Header = () => {
                                 ref={ref}
                             />
                             <div className="searchIconBtn">
-                                <img
-                                    src="/images/icons/search-solid.png"
-                                    alt="검색버튼"
-                                />
                                 <img
                                     src="/images/icons/search-solid.png"
                                     alt="검색버튼"
@@ -281,7 +278,7 @@ export const Header = () => {
                     </div>
                 </div>
             </header>
-            {isSearch.region === 'actives' && <Region data={demmy} />}
+            {data && isSearch.region === 'actives' && <Region data={data} />}
             {isSearch.dayAndTime === 'actives' && (
                 <HeaderLocalAndTitle
                     dayTitle={dayTitle}

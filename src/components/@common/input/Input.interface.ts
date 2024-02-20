@@ -4,4 +4,5 @@ export interface InputProps {
     defaultValue?: string;
     setValue?: React.Dispatch<React.SetStateAction<any>>;
     disabled?: boolean;
+    firstValue?: string;
 }

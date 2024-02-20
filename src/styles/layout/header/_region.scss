@@ -26,6 +26,8 @@
         width: 70%;
         display: flex;
         justify-items: flex-start;
+        flex-wrap: wrap;
+        overflow: auto;
         .localLayout {
             text-align: start;
             padding: 29.5px 29.5px;
@@ -33,6 +35,7 @@
             height: 50px;
             width: 50%;
             font-weight: 400;
+
             span {
                 position: relative;
                 top: -8px;

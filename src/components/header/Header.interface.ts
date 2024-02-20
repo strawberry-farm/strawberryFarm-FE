@@ -9,10 +9,12 @@ export interface Situation {
     guest: boolean;
 }
 export interface RegionProps {
-    sidoName: string;
-    sigungu: {
-        sigunguName: string;
-        bCode: number;
+    sido: {
+        sidoName: string;
+        sigungu: {
+            sigunguName: string;
+            bCode: number;
+        }[];
     }[];
 }
 export interface LocalTimeProps {

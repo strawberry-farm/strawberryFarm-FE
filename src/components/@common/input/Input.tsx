@@ -6,6 +6,7 @@ export default function Input({
     defaultValue,
     setValue,
     disabled,
+    firstValue,
 }: InputProps) {
     const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (setValue) setValue(e.target.value);
@@ -15,6 +16,7 @@ export default function Input({
             <input
                 className="common-input"
                 type={type}
+                defaultValue={firstValue}
                 placeholder={placeholder}
                 onChange={onChangeValue}
                 disabled={disabled}

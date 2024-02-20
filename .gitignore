@@ -26,3 +26,7 @@ dist-ssr
 # API KEY
 .env
 env.d.ts
+
+cert
+localhost.pem
+localhost-key.pem

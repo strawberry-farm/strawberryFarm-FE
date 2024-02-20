@@ -4,25 +4,23 @@ const baseURL = 'https://strawberryfarm.shop';
 
 const axiosInstance= axios.create({
     baseURL: baseURL,
-
-    headers: {
-      'Access-Control-Allow-Origin': baseURL,
-    },
   });
 
 axiosInstance.interceptors.request.use((config) => {
+    
     const localUser = localStorage.getItem('jwt');
-    
+    const reLocalUser = localStorage.getItem('reJwt') as string;
     const token = localUser ? localUser : null;
-    
     if (token && token.length > 0) {
         const isString = `Bearer :`+token;
         const not = isString.replace('"',"");
         const notTwo= not.replace('"',"");
-        config.headers.Authorization = notTwo;
-        // config.headers.Authorization.replace(/\/g, " ");
+        const reNot = reLocalUser.replace('"', '');
+        const reNotTwo = reNot.replace('"', '');
+        config.headers['Authorization'] = notTwo;
+        config.headers["Refresh-Token"] = reNotTwo;
     }
-    console.log(config);
+
     
     return config;
 });

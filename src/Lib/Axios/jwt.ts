@@ -14,7 +14,6 @@ export const isTokenValidOrUndefined = (token: any) => {
     if (!token) return '토큰 없음';
 
     const decodedToken: any = decodeJWT(token);
-    console.log(decodedToken, 'decodedToken');
 
     if (!decodedToken) return '토큰 디코딩 실패';
 

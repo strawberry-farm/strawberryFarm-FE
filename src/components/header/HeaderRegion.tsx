@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { RegionProps } from './Header.interface';
 import { useSetRecoilState } from 'recoil';
 import { dropRogionState } from '../../atom/dropStare';
-export const Region = (props: { data: RegionProps[] }) => {
-    const data = props.data;
+export const Region = (props: { data: RegionProps }) => {
+    const data = props.data.sido;
     // const [defaultData, setDefaultData] = useState('서울');
     const [local, setLocal] = useState(data[0].sigungu);
     const setDropdown = useSetRecoilState(dropRogionState);
     const OnclickHandler = (e: React.MouseEvent) => {
         const title = e.target as HTMLDivElement;
-
         const fliter = data.filter(
             (item: { sidoName: string }) => item.sidoName === title.innerText,
         );

@@ -19,7 +19,7 @@ export default function SigninForm() {
                 {
                     email: body.email,
                     password: body.password,
-                    expiredTime: 2000,
+                    expiredTime: 100000,
                 },
                 {
                     headers: {
@@ -38,8 +38,12 @@ export default function SigninForm() {
                     const localStorageJwt: any = JSON.stringify(
                         res.data.accessToken,
                     );
+                    const localStorageReJwt: any = JSON.stringify(
+                        res.data.refreshToken,
+                    );
                     localStorage.setItem('jwt', localStorageJwt);
-                    // navigate('/');
+                    localStorage.setItem('reJwt',localStorageReJwt);
+                    navigate('/');
                 } else {
                     setMatch(false);
                 }
