@@ -13,10 +13,14 @@ export interface RegionProps {
         sidoName: string;
         sigungu: {
             sigunguName: string;
-            bCode: number;
+            bcode: number;
         }[];
     }[];
 }
+export interface LocationData {
+    setLocation: React.Dispatch<React.SetStateAction<any>> | any;
+}
+
 export interface LocalTimeProps {
     day: string;
     time: string;

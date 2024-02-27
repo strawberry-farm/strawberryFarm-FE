@@ -32,13 +32,12 @@
             text-align: start;
             padding: 29.5px 29.5px;
             border-bottom: 1px #dcdcdc solid;
-            height: 50px;
+            height: auto;
             width: 50%;
             font-weight: 400;
-
             span {
                 position: relative;
-                top: -8px;
+                top: 0px;
             }
             &:nth-child(odd) {
                 border-right: 1px #dcdcdc solid;

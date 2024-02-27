@@ -17,6 +17,7 @@ import { SearchTag } from './HeaderSearchTag';
 import { queryKey } from '../../queries/query-key';
 import { useQuery } from '@tanstack/react-query';
 import axios from '../../Lib/Axios';
+import useInput from '../../hooks/useInput';
 
 // const demmy: RegionProps[] = [
 //     {
@@ -104,7 +105,7 @@ export const Header = () => {
     const navigator = useNavigate();
     const regionValue = useRecoilValue(dropRogionState);
     const dayAndTime = useRecoilValue(dropDayAndTimeState);
-
+    const title = useInput('');
     const { ref, isFocused } = useFocus(false);
     const [isMemu, setIsMemu] = useState<Situation>({
         user: false,
@@ -126,8 +127,17 @@ export const Header = () => {
         queryFn: async () =>
             axios.get('/contents/adminArea').then((res) => res.data),
     });
-    console.log(data);
 
+    // const { data: searchData, refetch } = useQuery({
+    //     queryKey: ['search'],
+    //     queryFn: async () =>
+    //         axios
+    //             .get(`/boards/search?keyword=${title.value}&page=5&size=15`)
+    //             .then((res) => res.data),
+    // });
+    // console.log(searchData, 'title');
+
+    // /boards/search?keyword=제목&page=5&size=15
     useEffect(() => {
         // 검색창 백그라운드 컬러 변경
         if (
@@ -175,7 +185,6 @@ export const Header = () => {
     const jwt = localStorage.getItem('jwt')
         ? localStorage.getItem('jwt')
         : null;
-    console.log(isSearch.region);
 
     return (
         <>
@@ -217,8 +226,12 @@ export const Header = () => {
                                 className="searchInp"
                                 placeholder="모임을 검색해 보세요!"
                                 ref={ref}
+                                {...title}
                             />
-                            <div className="searchIconBtn">
+                            <div
+                                className="searchIconBtn"
+                                // onClick={() => refetch()}
+                            >
                                 <img
                                     src="/images/icons/search-solid.png"
                                     alt="검색버튼"

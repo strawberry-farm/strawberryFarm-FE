@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { RegionProps } from './Header.interface';
+import { LocationData, RegionProps } from './Header.interface';
 import { useSetRecoilState } from 'recoil';
 import { dropRogionState } from '../../atom/dropStare';
-export const Region = (props: { data: RegionProps }) => {
+export const Region = (props: { data: RegionProps; setLocation?: any }) => {
     const data = props.data.sido;
+    console.log(props, 'data');
+
     // const [defaultData, setDefaultData] = useState('서울');
     const [local, setLocal] = useState(data[0].sigungu);
     const setDropdown = useSetRecoilState(dropRogionState);
@@ -18,7 +20,12 @@ export const Region = (props: { data: RegionProps }) => {
     const OnClickChange = (e: React.MouseEvent) => {
         const title = e.target as HTMLDivElement;
 
-        setDropdown(title.innerText);
+        if (typeof props.setLocation !== 'undefined') {
+            props.setLocation({
+                sigunguName: title.innerText,
+                bCode: e.currentTarget.id,
+            });
+        }
     };
 
     return (
@@ -35,12 +42,13 @@ export const Region = (props: { data: RegionProps }) => {
                     local.map(
                         (item: {
                             sigunguName: string;
-                            bCode: number | string;
+                            bcode: number | string;
                         }) => {
                             return (
                                 <div
-                                    key={item.bCode}
+                                    key={item.bcode}
                                     className="localLayout"
+                                    id={`${item.bcode}`}
                                     onClick={OnClickChange}
                                 >
                                     <span> {item.sigunguName}</span>
