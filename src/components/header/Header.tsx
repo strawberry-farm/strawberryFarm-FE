@@ -133,7 +133,7 @@ export const Header = () => {
     //     queryFn: async () =>
     //         axios
     //             .get(`/boards/search?keyword=${title.value}&page=5&size=15`)
-    //             .then((res) => res.data),
+    //             .then((res) => console.log(res, 'res')),
     // });
     // console.log(searchData, 'title');
 

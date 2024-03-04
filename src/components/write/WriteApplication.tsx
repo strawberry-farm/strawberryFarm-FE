@@ -2,6 +2,9 @@ import React from 'react';
 import { useRecoilState } from 'recoil';
 import { writeState } from '../../atom/writeState';
 import useInput from '../../hooks/useInput';
+import axios from '../../Lib/Axios/index';
+import { modalState } from '../../atom/modalState';
+import { useMutation } from '@tanstack/react-query';
 const WriteApplication = (props: {
     setView: React.Dispatch<React.SetStateAction<number>>;
 }) => {
@@ -9,7 +12,7 @@ const WriteApplication = (props: {
     const IntroductionValue = useInput('');
     const proficiencyValue = useInput('');
     const freeTalk = useInput('');
-
+    const [modal, setModal] = useRecoilState(modalState);
     const [write, setWtite] = useRecoilState(writeState);
     const onApi = () => {
         setWtite({
@@ -22,6 +25,45 @@ const WriteApplication = (props: {
             },
         });
     };
+    const onWrite = useMutation(() =>
+        axios
+            .post(
+                '/boards',
+                {
+                    title: write.title,
+                    fieldId: write.field,
+                    contents: write.detail,
+                    headcount: write.person,
+                    city: write,
+                    district: write,
+                    b_code: write.local?.bcode,
+                    location: write.local?.addr,
+                    latitude: write.local!.x,
+                    longitude: write.local!.y,
+                    question: write,
+                    days: write.date!.day,
+                    times: write.date!.time ?? '',
+                    tags: write.tag,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Credentials': 'true',
+                    },
+                },
+            )
+            .then(() => {
+                setModal({
+                    ...modal,
+                    content: '등록 완료되었습니다.',
+                    confirm: '확인',
+                    modalOpen: true,
+                    url: '',
+                });
+            }),
+    );
+    console.log(write, 'write');
 
     return (
         <div className="writeTitleLayout">

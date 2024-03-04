@@ -3,7 +3,7 @@ import MypageSidebarItem from './MypageSidebarMenuItem';
 export default function MypageSidebarMenu() {
     const menuList = [
         { title: '내 모임', path: '/mypage/user' },
-        { title: '내 채팅방', path: '/mypage/chatroom' },
+        { title: '내 채팅방', path: '/chatroom' },
         { title: '위시리스트', path: '/mypage/wishlist' },
         {
             title: '운영 중인 모임',
