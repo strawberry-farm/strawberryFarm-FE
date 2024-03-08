@@ -3,7 +3,7 @@ import { Pagination } from '../@common/pagination/Pagination';
 import { ContentProps } from './Main.interface';
 
 const MainContents = (props: { data: ContentProps[] }) => {
-    console.log(props.data);
+    console.log(props.data, 'fieldName');
     // 페이지별 담는 글 갯수
     const [limit, setLimit] = useState(5);
     const [page, setPage] = useState(1);
@@ -14,7 +14,7 @@ const MainContents = (props: { data: ContentProps[] }) => {
         <div className="mainContentsLayout">
             {props.data.map((item: ContentProps) => {
                 return (
-                    <div className="mainContents" key={item.postId}>
+                    <div className="mainContents" key={item.boardId}>
                         <img
                             src="https://file3.instiz.net/data/cached_img/upload/2018/05/20/2/081718869d129b71e660e1daded277ef.jpg"
                             alt="임시사진"
@@ -52,8 +52,7 @@ const MainContents = (props: { data: ContentProps[] }) => {
                                         alt="인원"
                                     />
                                     <span>
-                                        {item.headCountStatus} /{' '}
-                                        {item.headCount}
+                                        {item.applyCount} / {item.headCount}
                                     </span>
                                 </div>
                             </div>

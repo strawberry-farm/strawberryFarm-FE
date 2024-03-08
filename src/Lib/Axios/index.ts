@@ -19,6 +19,8 @@ axiosInstance.interceptors.request.use((config) => {
         const reNotTwo = reNot.replace('"', '');
         config.headers['Authorization'] = notTwo;
         config.headers["Refresh-Token"] = reNotTwo;
+    }else{
+        config.headers['Authorization'] = null
     }
 
     

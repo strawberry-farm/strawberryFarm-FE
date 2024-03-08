@@ -80,6 +80,7 @@ const getContentsKey = () => {
         postId: (postId: number) => {
             return [endponint, postId.toString()];
         },
+        data: [endponint, 'data'],
         search: [endponint, 'search'],
         adminArea: [endponint, 'adminarea'],
     };

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
 
 import { useFocus } from '../../hooks/useFocus';
@@ -18,6 +18,7 @@ import { queryKey } from '../../queries/query-key';
 import { useQuery } from '@tanstack/react-query';
 import axios from '../../Lib/Axios';
 import useInput from '../../hooks/useInput';
+import { mainState } from '../../atom/mainState';
 
 // const demmy: RegionProps[] = [
 //     {
@@ -105,6 +106,7 @@ export const Header = () => {
     const navigator = useNavigate();
     const regionValue = useRecoilValue(dropRogionState);
     const dayAndTime = useRecoilValue(dropDayAndTimeState);
+    const mainData = useSetRecoilState(mainState);
     const title = useInput('');
     const { ref, isFocused } = useFocus(false);
     const [isMemu, setIsMemu] = useState<Situation>({
@@ -128,15 +130,19 @@ export const Header = () => {
             axios.get('/contents/adminArea').then((res) => res.data),
     });
 
-    // const { data: searchData, refetch } = useQuery({
-    //     queryKey: ['search'],
-    //     queryFn: async () =>
-    //         axios
-    //             .get(`/boards/search?keyword=${title.value}&page=5&size=15`)
-    //             .then((res) => console.log(res, 'res')),
-    // });
-    // console.log(searchData, 'title');
-
+    const { data: searchData, refetch } = useQuery({
+        queryKey: queryKey.contents.data,
+        queryFn: async () =>
+            axios
+                .get(
+                    `/boards/search/non-user?keyword=${title.value}&page=1&size=8`,
+                )
+                .then((res) => res.data.boards),
+    });
+    useEffect(() => {
+        refetch();
+        mainData(searchData);
+    }, [mainData, refetch, searchData, title]);
     // /boards/search?keyword=제목&page=5&size=15
     useEffect(() => {
         // 검색창 백그라운드 컬러 변경

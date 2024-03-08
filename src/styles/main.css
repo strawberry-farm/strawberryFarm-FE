@@ -1712,7 +1712,7 @@ a {
   gap: 4px;
   cursor: pointer;
 }
-.detail-wrapper .detail-left-side .detail-content-area .detail-content-title-group .detail-content-button-group .button .text {
+.detail-wrapper .detail-left-side .detail-content-area .detail-content-title-group .detail-content-button-group .button .textDetail {
   font-size: 16px;
   color: #6e6e6e;
 }
@@ -1958,17 +1958,18 @@ a {
   width: 90%;
   margin-top: 1rem;
 }
-.detail-wrapper .detail-right-side .detail-content-apply-group .detail-content-button-group .button {
+.detail-wrapper .detail-right-side .detail-content-apply-group .detail-content-button-group .buttonDetail {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  padding: 10px;
   border: 1px solid rgba(29, 93, 155, 0.8);
   border-radius: 12px;
   font-size: 1.25rem;
   cursor: pointer;
 }
-.detail-wrapper .detail-right-side .detail-content-apply-group .detail-content-button-group .button .icon {
+.detail-wrapper .detail-right-side .detail-content-apply-group .detail-content-button-group .buttonDetail .icon {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -2055,6 +2056,7 @@ a {
   flex-wrap: wrap;
 }
 .mainContentsLayout .mainContents {
+  cursor: pointer;
   width: 23%;
   height: 240px;
   border-radius: 16px;

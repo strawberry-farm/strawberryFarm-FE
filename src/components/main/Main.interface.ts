@@ -1,11 +1,14 @@
 export interface ContentProps {
-    postId: number;
+    boardId: number;
     title: string;
     location: string;
     times: string;
     days: string;
     headCount: number;
-    headCountStatus: number;
-    imgae: string[];
-    wishState: boolean;
+    postStatus: string;
+    fieldName: string;
+    applyCount: number;
+    // headCountStatus: number;
+    // imgae: string[];
+    // wishState: boolean;
 }

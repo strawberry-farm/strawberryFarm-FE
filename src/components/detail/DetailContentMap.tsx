@@ -6,6 +6,7 @@ export default function DetailContentMap({
     longitude,
 }: DetailContentMapProps) {
     const { kakao } = window;
+    console.log(kakao, 'kakao');
 
     useEffect(() => {
         const container = document.getElementById('customMap');

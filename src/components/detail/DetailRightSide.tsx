@@ -29,12 +29,15 @@ export default function DetailRightSide({ height }: DetailRightSideProps) {
                         </span>
                     </div>
                     <div className="detail-content-button-group">
-                        <button className="button">
-                            <p className="text">문의하기</p>
+                        <button className="buttonDetail">
+                            <p className="textDetail">문의하기</p>
                             <img className="icon" src={questionIcon}></img>
                         </button>
-                        <button className="button" onClick={changeLikeState}>
-                            <p className="text">좋아요</p>
+                        <button
+                            className="buttonDetail"
+                            onClick={changeLikeState}
+                        >
+                            <p className="textDetail">좋아요</p>
                             <img
                                 className="icon"
                                 src={
