@@ -3,7 +3,6 @@ import DetailLeftSide from './DetailLeftSide';
 import DetailRightSide from './DetailRightSide';
 import { useState } from 'react';
 import { queryKey } from '../../queries/query-key';
-import { useParams } from 'react-router-dom';
 import axios from '../../Lib/Axios/index';
 
 export default function DetailBody(props: { id: number }) {

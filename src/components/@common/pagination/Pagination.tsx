@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PaginationProps } from './Pagination.interface';
 import { useRecoilValue } from 'recoil';
 import { pageNumberState } from '../../../atom/mainState';
@@ -39,9 +39,9 @@ export const Pagination = (props: PaginationProps) => {
                         ? Math.ceil(props.total / props.limit)
                         : 5,
                 )
-                    .fill()
+                    .fill(undefined)
                     .slice(0, 5)
-                    .map((x, i: number) => {
+                    .map((_x, i: number) => {
                         const colors = page === i + number ? 'blue' : '#000000';
                         return (
                             <button

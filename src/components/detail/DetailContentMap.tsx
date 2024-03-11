@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { DetailContentMapProps } from './Detail.interface';
 
 export default function DetailContentMap({
@@ -18,10 +18,10 @@ export default function DetailContentMap({
             level: 3,
         };
         const map = new kakao.maps.Map(container, options);
-        const marker = new kakao.maps.Marker({
-            map: map,
-            position: options.center,
-        });
+        // const marker = new kakao.maps.Marker({
+        //     map: map,
+        //     position: options.center,
+        // });
     }, [latitude, longitude]);
 
     return (

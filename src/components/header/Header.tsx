@@ -4,12 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { dropDayAndTimeState, dropRogionState } from '../../atom/dropStare';
 
 import { useFocus } from '../../hooks/useFocus';
-import {
-    LocalTimeProps,
-    RegionProps,
-    SearchIsProps,
-    Situation,
-} from './Header.interface';
+import { LocalTimeProps, SearchIsProps, Situation } from './Header.interface';
 import { UserDropDown } from './HeaderDropdown';
 import { HeaderLocalAndTitle } from './HeaderLocalAndTitle';
 import { Region } from './HeaderRegion';

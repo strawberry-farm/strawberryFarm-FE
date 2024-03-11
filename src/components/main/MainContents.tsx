@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import { Pagination } from '../@common/pagination/Pagination';
 import { ContentProps } from './Main.interface';

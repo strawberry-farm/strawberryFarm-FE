@@ -37,7 +37,7 @@ export function Router() {
     }, []);
 
     const refreshToken = () => {
-        const email = ''; // 토큰 갱신을 위한 유저 정보 (예: 이메일)
+        // const email = ''; // 토큰 갱신을 위한 유저 정보 (예: 이메일)
 
         axios
             .post('/auth/refresh', {

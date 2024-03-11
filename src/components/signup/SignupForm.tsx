@@ -1,3 +1,4 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import { useState } from 'react';
 import Input from '../@common/input/Input';
 import SignUpRegex from './SignupRegex';
