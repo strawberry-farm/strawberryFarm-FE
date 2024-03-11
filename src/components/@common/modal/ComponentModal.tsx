@@ -6,7 +6,7 @@ export default function ComponentModal() {
         return (
             <div
                 className="modal-background"
-                onClick={(e) => closeComponentModal(e)}
+                onClick={(e: any) => closeComponentModal(e)}
             >
                 <div className="component-modal-container">
                     <div className="modal-wrapper">

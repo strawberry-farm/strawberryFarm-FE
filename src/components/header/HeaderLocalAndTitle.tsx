@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { LocalTimeProps } from './Header.interface';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { dropDayAndTimeState } from '../../atom/dropStare';
 
 export const HeaderLocalAndTitle = (props: {

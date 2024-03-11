@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export const Footer = () => {
-    const navigator = useNavigate();
+    // const navigator = useNavigate();
     return (
         <div className="footer">
             <div className="footerLayout">

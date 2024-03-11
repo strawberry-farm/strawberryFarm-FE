@@ -6,7 +6,8 @@ import { asyncUploads } from '../../hooks/upload';
 const WritePicture = (props: {
     setView: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-    const [fileName, setfileName] = useState();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // const [fileName, setfileName] = useState();
     const [folder, setFolder] = useState();
     const [tagText, setTagText] = useState('');
     const [tagBox, setTagBox] = useState(['모임']);
@@ -66,7 +67,7 @@ const WritePicture = (props: {
                 <div className="fileBox">
                     <label htmlFor="file">
                         <img
-                            src={fileName || '/images/common/write-picture.png'}
+                            src={'' || '/images/common/write-picture.png'}
                             alt="사진추가"
                         />
                     </label>

@@ -95,6 +95,7 @@ export default function PasswordResetForm() {
                                     placeholder="인증코드를 입력하세요."
                                     type="text"
                                     setValue={setCode}
+                                    firstValue={code}
                                     disabled={false}
                                 />
                                 <button

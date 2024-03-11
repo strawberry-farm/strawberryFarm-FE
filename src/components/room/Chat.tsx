@@ -1,30 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useRef, useState } from 'react';
 import useInput from '../../hooks/useInput';
 
 export const Chat = () => {
     const text = useInput('');
-    const [messages, setMessages] = useState<string[]>([]);
-    const webSocket = useRef<WebSocket | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // const [messages, setMessages] = useState<string[]>([]);
+    // const webSocket = useRef<WebSocket | null>(null);
 
-    useEffect(() => {
-        webSocket.current = new WebSocket('wss://websocket-url');
-        webSocket.current.onopen = () => {
-            console.log('WebSocket 연결!');
-        };
-        webSocket.current.onclose = (error) => {
-            console.log(error);
-        };
-        webSocket.current.onerror = (error) => {
-            console.log(error);
-        };
-        webSocket.current.onmessage = (event: MessageEvent) => {
-            setMessages((prev) => [...prev, event.data]);
-        };
+    // useEffect(() => {
+    //     webSocket.current = new WebSocket('wss://websocket-url');
+    //     webSocket.current.onopen = () => {
+    //         console.log('WebSocket 연결!');
+    //     };
+    //     webSocket.current.onclose = (error) => {
+    //         console.log(error);
+    //     };
+    //     webSocket.current.onerror = (error) => {
+    //         console.log(error);
+    //     };
+    //     webSocket.current.onmessage = (event: MessageEvent) => {
+    //         setMessages((prev) => [...prev, event.data]);
+    //     };
 
-        return () => {
-            webSocket.current?.close();
-        };
-    }, []);
+    //     return () => {
+    //         webSocket.current?.close();
+    //     };
+    // }, []);
 
     return (
         <div className="chatBox">

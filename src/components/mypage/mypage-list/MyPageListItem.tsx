@@ -1,7 +1,7 @@
 import { MypageItemProps } from './MyPageList.interface';
 import MyPageListFavorite from './MyPageListFavorite';
 
-export default function MyPageListItem<T>({
+export default function MyPageListItem({
     thumbnail,
     category,
     title,

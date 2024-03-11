@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from 'react';
 import { Pagination } from '../@common/pagination/Pagination';
 import { ContentProps } from './Main.interface';
 import { useNavigate } from 'react-router-dom';
@@ -8,13 +6,13 @@ import { pageNumberState, totalPageState } from '../../atom/mainState';
 
 const MainContents = (props: { data: ContentProps[] }) => {
     // 페이지별 담는 글 갯수
-    const [limit, setLimit] = useState(5);
+    const limit = 5;
     // const [page, setPage] = useState(1);
     const [page, setPage] = useRecoilState(pageNumberState);
     const navigator = useNavigate();
     const totalCount = useRecoilValue(totalPageState);
     // 총 몇개의 페이지가 필요한지 계산
-    const offset = (page - 1) * limit;
+    // const offset = (page - 1) * limit;
     return (
         <div className="mainContentsLayout">
             {props.data.map((item: ContentProps) => {

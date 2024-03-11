@@ -18,7 +18,8 @@ export default function SignupForm() {
     const [nickName, setNickname] = useState('');
     const [code, setCode] = useState('');
     const [empty, setEmpty] = useState<boolean>(false);
-    const [register, setRegister] = useState<boolean>(false);
+
+    // const [register, setRegister] = useState<boolean>(false);
     const [authenticating, setAuthenticating] = useState<boolean>(false);
     const [disabled, setDisabled] = useState<boolean>(false);
     const [success, setSuccess] = useState<string>('progressing');
@@ -130,7 +131,7 @@ export default function SignupForm() {
                     passwordConfirm={passwordConfirm}
                     nickName={nickName}
                     empty={empty}
-                    register={register}
+                    register={false}
                 />
                 <div className="signup-form-email-group">
                     <Input
@@ -156,6 +157,7 @@ export default function SignupForm() {
                                 <Input
                                     placeholder="인증코드를 입력하세요."
                                     type="text"
+                                    firstValue={code}
                                     setValue={setCode}
                                     disabled={false}
                                 />

@@ -1,5 +1,5 @@
 export const NextArrow = (props: any) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
 
     return (
         <div
@@ -14,7 +14,7 @@ export const NextArrow = (props: any) => {
 };
 
 export const PrevArrow = (props: any) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
 
     return (
         <div

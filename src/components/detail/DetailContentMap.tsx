@@ -9,15 +9,16 @@ export default function DetailContentMap({
     console.log(kakao, 'kakao');
 
     useEffect(() => {
-        const container = document.getElementById('customMap');
-        const options = {
-            center: new kakao.maps.LatLng(
-                (latitude = 39.4),
-                (longitude = 39.4),
-            ),
-            level: 3,
-        };
-        const map = new kakao.maps.Map(container, options);
+        // const container = document.getElementById('customMap');
+        // const options = {
+        //     center: new kakao.maps.LatLng(
+        //         (latitude = 39.4),
+        //         (longitude = 39.4),
+        //     ),
+        //     level: 3,
+        // };
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // const map = new kakao.maps.Map(container, options);
         // const marker = new kakao.maps.Marker({
         //     map: map,
         //     position: options.center,

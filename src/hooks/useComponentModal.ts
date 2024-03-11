@@ -5,7 +5,7 @@ export const useComponentModal = () => {
     const [modalDataState, setModalDataState] =
         useRecoilState(componentModalState);
 
-    const closeComponentModal = (event: MouseEvent<HTMLDivElement>) => {
+    const closeComponentModal = (event: MouseEvent) => {
         if (event.target === event.currentTarget) {
             setModalDataState(() => {
                 return { isOpen: false, content: undefined };
