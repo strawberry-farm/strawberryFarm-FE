@@ -13,7 +13,7 @@ export default function DetailBody(props: { id: number }) {
         queryFn: async () =>
             axios.get(`/boards/${props.id}`).then((res) => res.data),
     });
-    console.log(data);
+    console.log(data, 'DetailData');
 
     return (
         <>

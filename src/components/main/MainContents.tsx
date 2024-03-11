@@ -1,20 +1,28 @@
 import { useState } from 'react';
 import { Pagination } from '../@common/pagination/Pagination';
 import { ContentProps } from './Main.interface';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { pageNumberState, totalPageState } from '../../atom/mainState';
 
 const MainContents = (props: { data: ContentProps[] }) => {
-    console.log(props.data, 'fieldName');
     // 페이지별 담는 글 갯수
     const [limit, setLimit] = useState(5);
-    const [page, setPage] = useState(1);
-
+    // const [page, setPage] = useState(1);
+    const [page, setPage] = useRecoilState(pageNumberState);
+    const navigator = useNavigate();
+    const totalCount = useRecoilValue(totalPageState);
     // 총 몇개의 페이지가 필요한지 계산
     const offset = (page - 1) * limit;
     return (
         <div className="mainContentsLayout">
             {props.data.map((item: ContentProps) => {
                 return (
-                    <div className="mainContents" key={item.boardId}>
+                    <div
+                        className="mainContents"
+                        key={item.boardId}
+                        onClick={() => navigator(`/detail/${item.boardId}`)}
+                    >
                         <img
                             src="https://file3.instiz.net/data/cached_img/upload/2018/05/20/2/081718869d129b71e660e1daded277ef.jpg"
                             alt="임시사진"
@@ -61,7 +69,7 @@ const MainContents = (props: { data: ContentProps[] }) => {
                 );
             })}
             <Pagination
-                total={props.data.length}
+                total={totalCount}
                 limit={limit}
                 page={page}
                 setPage={setPage}

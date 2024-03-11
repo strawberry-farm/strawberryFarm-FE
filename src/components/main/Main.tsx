@@ -1,11 +1,11 @@
 import { useRecoilState } from 'recoil';
 import { Silde } from '../@common/slide/silde';
-import { ContentProps } from './Main.interface';
+
 import MainContents from './MainContents';
 import { mainState } from '../../atom/mainState';
 export const MainPage = () => {
     const mainData = useRecoilState(mainState);
-    console.log(mainData, '222');
+    console.log(mainData, 'mainData');
 
     // const data: ContentProps[] = [
     //     {

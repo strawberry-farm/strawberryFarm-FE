@@ -28,5 +28,7 @@ dist-ssr
 env.d.ts
 
 cert
+cert.pem
+key.pem
 localhost.pem
 localhost-key.pem

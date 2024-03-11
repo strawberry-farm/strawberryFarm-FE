@@ -18,7 +18,11 @@ import { queryKey } from '../../queries/query-key';
 import { useQuery } from '@tanstack/react-query';
 import axios from '../../Lib/Axios';
 import useInput from '../../hooks/useInput';
-import { mainState } from '../../atom/mainState';
+import {
+    mainState,
+    pageNumberState,
+    totalPageState,
+} from '../../atom/mainState';
 
 // const demmy: RegionProps[] = [
 //     {
@@ -107,6 +111,7 @@ export const Header = () => {
     const regionValue = useRecoilValue(dropRogionState);
     const dayAndTime = useRecoilValue(dropDayAndTimeState);
     const mainData = useSetRecoilState(mainState);
+    const totalPage = useSetRecoilState(totalPageState);
     const title = useInput('');
     const { ref, isFocused } = useFocus(false);
     const [isMemu, setIsMemu] = useState<Situation>({
@@ -118,6 +123,7 @@ export const Header = () => {
         day: '',
         time: '',
     });
+    const page = useRecoilValue(pageNumberState);
     // const [isRegion, setIsRegion] = useState(false);
     const [isSearch, setIsSearch] = useState<SearchIsProps>({
         region: 'basic',
@@ -135,10 +141,15 @@ export const Header = () => {
         queryFn: async () =>
             axios
                 .get(
-                    `/boards/search/non-user?keyword=${title.value}&page=1&size=8`,
+                    `/boards/search/non-user?keyword=${title.value}&page=${page}&size=8`,
                 )
-                .then((res) => res.data.boards),
+                .then((res) => {
+                    totalPage(res.data.totalCount);
+                    return res.data.boards;
+                }),
     });
+    console.log(searchData);
+
     useEffect(() => {
         refetch();
         mainData(searchData);

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { PaginationProps } from './Pagination.interface';
+import { useRecoilValue } from 'recoil';
+import { pageNumberState } from '../../../atom/mainState';
 export const Pagination = (props: PaginationProps) => {
     const numPages = Math.ceil(props.total / props.limit);
     const [number, setNumber] = useState(1);
-    console.log(props.total);
+    const page = useRecoilValue(pageNumberState);
+    console.log(page, 'page');
 
     const next = () => {
         if (props.page === number + 4 && props.page !== numPages) {
@@ -38,18 +41,24 @@ export const Pagination = (props: PaginationProps) => {
                 )
                     .fill()
                     .slice(0, 5)
-                    .map((x, i: number) => (
-                        <button
-                            className="paginationButton"
-                            key={i + number}
-                            // aria-current={
-                            //     props.page === i + number ? 'page' : null
-                            // }
-                            onClick={() => props.setPage(i + number)}
-                        >
-                            {i + number}
-                        </button>
-                    ))}
+                    .map((x, i: number) => {
+                        const colors = page === i + number ? 'blue' : '#000000';
+                        return (
+                            <button
+                                className="paginationButton"
+                                key={i + number}
+                                // aria-current={
+                                //     props.page === i + number ? 'page' : null
+                                // }
+                                onClick={() => props.setPage(i + number)}
+                            >
+                                <span style={{ color: colors }}>
+                                    {' '}
+                                    {i + number}
+                                </span>
+                            </button>
+                        );
+                    })}
                 <button
                     className="paginationButton"
                     onClick={next}
