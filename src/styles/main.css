@@ -718,6 +718,16 @@ a {
   height: 36px;
   cursor: pointer;
 }
+.headers .headLayout .userTool .WriteButton {
+  width: auto;
+  padding: 10px 20px;
+  margin-right: 20px;
+  font-size: 22px;
+  background-color: #1d5d9b;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  color: #ffffff;
+}
 
 .layout {
   position: absolute;

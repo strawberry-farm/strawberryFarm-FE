@@ -18,6 +18,7 @@ import {
     pageNumberState,
     totalPageState,
 } from '../../atom/mainState';
+import Button from '../@common/button/Button';
 
 // const demmy: RegionProps[] = [
 //     {
@@ -268,6 +269,12 @@ export const Header = () => {
                         )}
                         {jwt && (
                             <>
+                                <button
+                                    className="WriteButton"
+                                    onClick={() => navigator('/write')}
+                                >
+                                    모임 만들기
+                                </button>
                                 <img
                                     onClick={() =>
                                         setIsMemu({

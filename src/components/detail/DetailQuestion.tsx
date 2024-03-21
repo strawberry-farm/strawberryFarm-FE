@@ -5,21 +5,26 @@ import { useRecoilState } from 'recoil';
 import { modalState } from '../../atom/modalState';
 import Portal from '../@common/modal/portal/Portal';
 import ConfirmModal from '../@common/modal/ConfirmModal';
+import { useMutation } from '@tanstack/react-query';
+import axios from '../../Lib/Axios/index';
+import useInput from '../../hooks/useInput';
+import { queryKey } from '../../queries/query-key';
 
 export default function DetailQuestion({
     question,
     writerId,
 }: DetailQuestionProps) {
-    const { userId, profile, nickName, contents, secret, comments } = question;
+    const { qnaId, profile, nickName, contents, secret, comments } = question;
     const [modal, setModal] = useRecoilState(modalState);
     const [open, setOpen] = useState<boolean>(false);
     const loginId = 6;
+    const inputValue = useInput('');
 
     const openComment = () => {
         !open && setOpen(true);
         !!open && setOpen(false);
 
-        if (userId === loginId) {
+        if (qnaId === loginId) {
             return;
         } else if (writerId === loginId) {
             return;
@@ -37,9 +42,32 @@ export default function DetailQuestion({
         setOpen(false);
     };
 
-    const applyComment = () => {
-        //문의 답변 전송하는 API
-    };
+    const applyComment = useMutation(() =>
+        axios
+            .post(
+                '/boards/qna/comment',
+                {
+                    qnaId: writerId,
+                    contents: inputValue.value,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Credentials': 'true',
+                    },
+                },
+            )
+            .then(() => {
+                setModal({
+                    ...modal,
+                    content: '등록 완료되었습니다.',
+                    confirm: '확인',
+                    modalOpen: true,
+                    url: '',
+                });
+            }),
+    );
 
     return (
         <div className="detail-question-group">
@@ -54,7 +82,7 @@ export default function DetailQuestion({
                     </span>
                 </div>
                 <div className="detail-question-desc-group">
-                    {userId !== loginId ? (
+                    {qnaId !== loginId ? (
                         <p
                             className={`detail-question-desc ${
                                 writerId !== loginId && secret ? 'private' : ''
@@ -88,7 +116,7 @@ export default function DetailQuestion({
                     {writerId !== loginId && comments && (
                         <button
                             className={`detail-question-button ${
-                                userId !== loginId && secret ? 'private' : ''
+                                qnaId !== loginId && secret ? 'private' : ''
                             }`}
                             onClick={openComment}
                         >
@@ -102,13 +130,14 @@ export default function DetailQuestion({
                     <textarea
                         className="detail-question-textarea"
                         placeholder="문의에 대한 답글을 작성해 주세요."
-                        defaultValue={comments && comments}
+                        // defaultValue={comments && comments}
+                        {...inputValue}
                         readOnly={comments ? true : false}
                     ></textarea>
                     {writerId === loginId && !comments && (
                         <button
                             className="comment-success-button"
-                            onClick={applyComment}
+                            onClick={() => applyComment.mutate()}
                         >
                             답변 완료
                         </button>
