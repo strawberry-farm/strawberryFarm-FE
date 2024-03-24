@@ -6,7 +6,6 @@ import { asyncUploads } from '../../hooks/upload';
 const WritePicture = (props: {
     setView: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     // const [fileName, setfileName] = useState();
     const [folder, setFolder] = useState();
     const [tagText, setTagText] = useState('');
@@ -57,6 +56,18 @@ const WritePicture = (props: {
             <div className="title">
                 사진 및 태그 <span className="subTitle">(필수)</span>
             </div>
+            {/* <input
+                type="file"
+                id="file"
+                accept="image/*"
+                onChange={(e) => {
+                    console.log(e, 'ddds');
+
+                    // if (!e.target.files) return;
+                    asyncUploads(e).then((res: any) => setFolder(res));
+                    e.target.value = '';
+                }}
+            /> */}
             <div className="titleBox">
                 <div className="inputTitle">
                     사진 <span className="subTitle">(필수)</span>&nbsp;
@@ -65,7 +76,7 @@ const WritePicture = (props: {
                     </span>
                 </div>
                 <div className="fileBox">
-                    <label htmlFor="file">
+                    <label htmlFor="files">
                         <img
                             src={'' || '/images/common/write-picture.png'}
                             alt="사진추가"
@@ -73,11 +84,12 @@ const WritePicture = (props: {
                     </label>
                     <input
                         type="file"
-                        id="file"
-                        // onChange={uploadHandler}
+                        id="files"
                         accept="image/*"
                         onChange={(e) => {
-                            if (!e.target.files) return;
+                            console.log(e, 'ddds');
+
+                            // if (!e.target.files) return;
                             asyncUploads(e).then((res: any) => setFolder(res));
                             e.target.value = '';
                         }}

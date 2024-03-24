@@ -2,18 +2,64 @@ import { useState } from 'react';
 import { customUserImage } from '../../hooks/utils';
 import { DetailRightSideProps } from './Detail.interface';
 import DetailContentMap from './DetailContentMap';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import axios from '../../Lib/Axios//index';
+import { useNavigate, useParams } from 'react-router-dom';
+import { queryKey } from '../../queries/query-key';
 
-export default function DetailRightSide({ height }: DetailRightSideProps) {
+export default function DetailRightSide({
+    height,
+    wish,
+}: DetailRightSideProps) {
+    const queryClient = useQueryClient();
     const locationIcon = '/images/icons/location-solid.png';
     const questionIcon = '/images/icons/question-line.png';
     const likeNotFillIcon = '/images/icons/like-line.png';
     const likeFillIcon = '/images/icons/like-solid.png';
-    const [like, setLike] = useState<boolean>(false);
-
+    const { id } = useParams();
+    const navigator = useNavigate();
     const changeLikeState = () => {
-        like === true ? setLike(false) : setLike(true);
+        !wish ? onWish.mutate() : delWish.mutate();
     };
-
+    const onWish = useMutation(() =>
+        axios
+            .post(
+                '/boards/wish',
+                {
+                    boardsId: Number(id),
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Credentials': 'true',
+                    },
+                },
+            )
+            .then(() => {
+                const idString = Number(id);
+                queryClient.invalidateQueries(
+                    queryKey.contents.postId(idString),
+                );
+            })
+            .catch(() => navigator('/signin')),
+    );
+    const delWish = useMutation(() =>
+        axios
+            .delete(`/boards/wish/${id}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true',
+                },
+            })
+            .then(() => {
+                const idString = Number(id);
+                queryClient.invalidateQueries(
+                    queryKey.contents.postId(idString),
+                );
+            }),
+    );
     return (
         <div className="detail-right-side" style={{ height: `${height}` }}>
             <div className="detail-sticky">
@@ -41,7 +87,7 @@ export default function DetailRightSide({ height }: DetailRightSideProps) {
                             <img
                                 className="icon"
                                 src={
-                                    like === true
+                                    wish === true
                                         ? likeFillIcon
                                         : likeNotFillIcon
                                 }

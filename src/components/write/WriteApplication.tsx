@@ -25,6 +25,8 @@ const WriteApplication = (props: {
             },
         });
     };
+    console.log(write);
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     // const onWrite = useMutation(() =>
     //     axios

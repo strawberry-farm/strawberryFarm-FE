@@ -16,9 +16,13 @@ export default function DetailBody(props: { id: number }) {
 
     return (
         <>
-            {data && <DetailLeftSide setHeight={setHeight} data={data} />}
-
-            <DetailRightSide height={height} />
+            {data && (
+                <>
+                    {' '}
+                    <DetailLeftSide setHeight={setHeight} data={data} />
+                    <DetailRightSide height={height} wish={data.wishState} />
+                </>
+            )}
         </>
     );
 }

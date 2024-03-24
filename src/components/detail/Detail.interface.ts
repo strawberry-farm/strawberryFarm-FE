@@ -46,6 +46,7 @@ export interface DetailProps {
 
 export interface DetailRightSideProps {
     height: string;
+    wish: boolean;
 }
 
 export interface DetailContentMapProps {
