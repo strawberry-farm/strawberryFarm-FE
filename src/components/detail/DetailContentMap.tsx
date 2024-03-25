@@ -27,6 +27,7 @@ export default function DetailContentMap({
             map: map,
             position: options.center,
         });
+        console.log(marker);
     }, [latitude, longitude]);
 
     return (

@@ -118,6 +118,8 @@ export const Header = () => {
         day: '',
         time: '',
     });
+    console.log(dayTitle, 'dayTitle');
+
     const page = useRecoilValue(pageNumberState);
     // const [isRegion, setIsRegion] = useState(false);
     const [isSearch, setIsSearch] = useState<SearchIsProps>({
