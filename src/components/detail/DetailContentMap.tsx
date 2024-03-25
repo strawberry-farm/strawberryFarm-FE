@@ -6,28 +6,27 @@ export default function DetailContentMap({
     longitude,
 }: DetailContentMapProps) {
     const { kakao } = window;
-    console.log(kakao, 'kakao');
 
     useEffect(() => {
-        // const container = document.getElementById('customMap');
-        // const options = {
-        //     center: new kakao.maps.LatLng(
-        //         (latitude = 39.4),
-        //         (longitude = 39.4),
-        //     ),
-        //     level: 3,
-        // };
+        const container = document.getElementById('customMap');
+        const options = {
+            center: new kakao.maps.LatLng(
+                (latitude = 33.43213),
+                (longitude = 126.41222),
+            ),
+            level: 3,
+        };
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        // const map = new kakao.maps.Map(container, options);
-        // const marker = new kakao.maps.Marker({
-        //     map: map,
-        //     position: options.center,
-        // });
+        const map = new kakao.maps.Map(container, options);
+        const marker = new kakao.maps.Marker({
+            map: map,
+            position: options.center,
+        });
     }, [latitude, longitude]);
 
     return (
         <div className="detail-content-map-group">
-            <div id="customMap" className="detail-content-map"></div>
+            <div id="customMap" className="detail-content-map" />
         </div>
     );
 }

@@ -113,12 +113,12 @@ export default function SignupForm() {
 
     const completeSignup = () => {
         signUp.mutate({ email, password, nickName });
-        setModal({
-            content: '회원가입이 완료되었습니다',
-            confirm: '로그인하러 가기',
-            modalOpen: true,
-            url: '/signin',
-        });
+        // setModal({
+        //     content: '회원가입이 완료되었습니다',
+        //     confirm: '로그인하러 가기',
+        //     modalOpen: true,
+        //     url: '/signin',
+        // });
     };
 
     return (

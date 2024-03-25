@@ -17,8 +17,12 @@ export default function DetailLeftSide({
 
     return (
         <div className="detail-left-side" ref={leftSideRef}>
-            <DetailContentArea />
-            {data && <DetailQuestionArea data={data} />}
+            {data && (
+                <>
+                    <DetailContentArea data={data} />
+                    <DetailQuestionArea data={data} />
+                </>
+            )}
         </div>
     );
 }

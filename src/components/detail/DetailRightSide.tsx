@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { customUserImage } from '../../hooks/utils';
 import { DetailRightSideProps } from './Detail.interface';
 import DetailContentMap from './DetailContentMap';

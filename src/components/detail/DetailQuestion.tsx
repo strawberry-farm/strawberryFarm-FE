@@ -8,7 +8,6 @@ import ConfirmModal from '../@common/modal/ConfirmModal';
 import { useMutation } from '@tanstack/react-query';
 import axios from '../../Lib/Axios/index';
 import useInput from '../../hooks/useInput';
-import { queryKey } from '../../queries/query-key';
 
 export default function DetailQuestion({
     question,
@@ -137,7 +136,9 @@ export default function DetailQuestion({
                     {writerId === loginId && !comments && (
                         <button
                             className="comment-success-button"
-                            onClick={() => applyComment.mutate()}
+                            onClick={() => {
+                                applyComment.mutate();
+                            }}
                         >
                             답변 완료
                         </button>

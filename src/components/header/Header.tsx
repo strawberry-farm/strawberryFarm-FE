@@ -270,7 +270,9 @@ export const Header = () => {
                             <>
                                 <button
                                     className="WriteButton"
-                                    onClick={() => navigator('/write')}
+                                    onClick={() => {
+                                        navigator('/write');
+                                    }}
                                 >
                                     모임 만들기
                                 </button>

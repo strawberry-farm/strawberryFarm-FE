@@ -12,13 +12,11 @@ export default function DetailBody(props: { id: number }) {
         queryFn: async () =>
             axios.get(`/boards/${props.id}`).then((res) => res.data),
     });
-    console.log(data, '1123');
 
     return (
         <>
             {data && (
                 <>
-                    {' '}
                     <DetailLeftSide setHeight={setHeight} data={data} />
                     <DetailRightSide height={height} wish={data.wishState} />
                 </>
