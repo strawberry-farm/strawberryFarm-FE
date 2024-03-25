@@ -1,5 +1,5 @@
 import DetailQuestion from './DetailQuestion';
-import { DetailProps, QnaProps, QuestionProps } from './Detail.interface';
+import { DetailProps, QnaProps } from './Detail.interface';
 import { useState } from 'react';
 import { modalState } from '../../atom/modalState';
 import { useRecoilState } from 'recoil';
@@ -12,11 +12,10 @@ export default function DetailQuestionArea({ data }: DetailProps) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const jwt = localStorage.getItem('jwt');
     const navigator = useNavigate();
-    console.log(jwt);
 
     const [input, setInput] = useState<string>();
     const [checked, setChecked] = useState<boolean>(false);
-    const writerId = 6;
+
     const [modal, setModal] = useRecoilState(modalState);
     const onChangeInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         console.log(input);
