@@ -9,6 +9,7 @@ import { queryKey } from '../../queries/query-key';
 export default function DetailRightSide({
     height,
     wish,
+    wishId,
 }: DetailRightSideProps) {
     const queryClient = useQueryClient();
     const locationIcon = '/images/icons/location-solid.png';
@@ -45,7 +46,7 @@ export default function DetailRightSide({
     );
     const delWish = useMutation(() =>
         axios
-            .delete(`/boards/wish/${id}`, {
+            .delete(`/boards/wish/${wishId}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*',

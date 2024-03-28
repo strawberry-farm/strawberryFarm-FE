@@ -132,6 +132,7 @@ export const Header = () => {
         queryFn: async () =>
             axios.get('/contents/adminArea').then((res) => res.data),
     });
+    console.log(data, 'dataq');
 
     const { data: searchData, refetch } = useQuery({
         queryKey: queryKey.contents.data,

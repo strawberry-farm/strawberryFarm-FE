@@ -47,6 +47,7 @@ export interface DetailProps {
 export interface DetailRightSideProps {
     height: string;
     wish: boolean;
+    wishId: number | undefined | null;
 }
 
 export interface DetailContentMapProps {

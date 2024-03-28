@@ -4,11 +4,11 @@ import { RegionProps } from './Header.interface';
 // import { dropRogionState } from '../../atom/dropStare';
 export const Region = (props: { data: RegionProps; setLocation?: any }) => {
     const data = props.data.sido;
-    console.log(props, 'data');
 
     // const [defaultData, setDefaultData] = useState('서울');
     const [local, setLocal] = useState(data[0].sigungu);
     // const setDropdown = useSetRecoilState(dropRogionState);
+
     const OnclickHandler = (e: React.MouseEvent) => {
         const title = e.target as HTMLDivElement;
         const fliter = data.filter(

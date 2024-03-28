@@ -2,7 +2,7 @@ import { queryKey } from '../../../queries/query-key';
 import { Region } from '../../header/HeaderRegion';
 import axios from '../../../Lib/Axios';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 // import { useRecoilState } from 'recoil';
 // import { modalState } from '../../../atom/modalState';
 export default function MyPageLikeLocation() {
@@ -51,9 +51,11 @@ export default function MyPageLikeLocation() {
             <h2 className="mypage-title">관심 지역 설정</h2>
             <div className="mypage-body">
                 <div className="mypage-likeLocation-region">
-                    {data && (
-                        <Region data={data} setLocation={setLikeLocation} />
-                    )}
+                    <Suspense fallback={<>로딩중...</>}>
+                        {data && (
+                            <Region data={data} setLocation={setLikeLocation} />
+                        )}
+                    </Suspense>
                 </div>
                 <button
                     type="button"

@@ -26,7 +26,7 @@ export default function DetailQuestionArea({ data }: DetailProps) {
     const onChangeChecked = () => {
         setChecked(!checked);
     };
-    console.log(data, 'datas');
+
     const queryClient = useQueryClient();
     const onComment = useMutation(() =>
         axios

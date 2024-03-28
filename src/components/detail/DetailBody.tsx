@@ -18,7 +18,11 @@ export default function DetailBody(props: { id: number }) {
             {data && (
                 <>
                     <DetailLeftSide setHeight={setHeight} data={data} />
-                    <DetailRightSide height={height} wish={data.wishState} />
+                    <DetailRightSide
+                        height={height}
+                        wish={data.wishState}
+                        wishId={data.wishId}
+                    />
                 </>
             )}
         </>
